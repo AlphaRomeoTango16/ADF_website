@@ -1,16 +1,24 @@
 import styled from 'styled-components'
 import { StyledLink } from '../../utils/style/Atoms'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import Logo from '../../assets/Logo.png'
+import French from '../../assets/French_flag.png'
+import English from '../../assets/English_flag.png'
 import colors from '../../utils/style/colors'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {IoChevronDownCircleOutline} from 'react-icons/io5'
 
 const HomeLogo = styled.img`
     height: 70px;
 `
 
+const Flag = styled.img`
+    height: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+`
+
 const NavContainer = styled.nav`
-    padding: 70px;
+    padding: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,21 +34,20 @@ const NavLine = styled.nav`
 
 const LanguageButton = styled.button`
     background-color: transparent;
+    display: flex;
     align-items: center;
     height: 30px;
     padding: 3px 10px 3px 10px;
     font-family: 'Heiti SC', Helvetica, sans-serif;
     font-size: 18px;
     justify-content: space-between;
-    border-radius: 10px;
     border: none;
     cursor: pointer;
     color: ${colors.primary};
     :hover{
-        border: 1px solid black;
-    }
-    :active{
+        border-radius: 5px;
         background-color: black;
+        border: 1px solid black;
         color: ${colors.secondary}
     }
 `
@@ -55,20 +62,10 @@ const DropdownMenu = styled.div`
 
 const LanguageMenu = styled.nav`
     background: #ffffff;
-    position: absolute;
     top: 30px;
-    right: 0;
+    position: absolute;
     width: 120px;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-    :active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
 `
 
 const LanguageList = styled.ul`
@@ -79,20 +76,25 @@ const LanguageList = styled.ul`
 
 const LanguageItem = styled.li`
     border-bottom: 1px solid #dddddd;
+    height: 20px;
     padding-top: 5px;
+    :hover {
+        background-color: #e3e3e3;
+    }
 `
 
 const LanguageLink = styled.a`
+    display: flex;
+    justify-content: flex-end;
     text-decoration: none;
+    font-size: 13px;
     color: #333333;
-    padding: 15px 20px;
-    display: block;
+    width: 100%;
 `
 
 function Header() {
-    const dropdownRef = useRef(null);
-    const [isActive, setIsActive] = useState(false);
-    const onClick = () => setIsActive(!isActive);
+    const [isOpen, setIsOpen] = useState(false);
+    const toggling = () => setIsOpen(!isOpen);
 
     return (
         <NavContainer>
@@ -104,13 +106,15 @@ function Header() {
                 <StyledLink to="/contact">Contact</StyledLink>
             </NavLine>
             <DropdownMenu>
-                <LanguageButton onClick={onClick} className="menu-trigger">Langues<Span><FontAwesomeIcon icon="chevron-down"/></Span></LanguageButton>
-                <LanguageMenu ref={dropdownRef} className={`menu ${isActive ? 'active' : 'inactive'}`}>
+                <LanguageButton onClick={toggling} className="menu-trigger">Langues<Span><IoChevronDownCircleOutline /></Span></LanguageButton>
+                {isOpen && (
+                <LanguageMenu>
                     <LanguageList>
-                        <LanguageItem><LanguageLink href="/french">Français</LanguageLink></LanguageItem>
-                        <LanguageItem><LanguageLink href="/english">Anglais</LanguageLink></LanguageItem>
+                        <LanguageItem><LanguageLink href="/french">Français<Flag src={French}/></LanguageLink></LanguageItem>
+                        <LanguageItem><LanguageLink href="/english">Anglais<Flag src={English}/></LanguageLink></LanguageItem>
                     </LanguageList>
                 </LanguageMenu>
+                )}
             </DropdownMenu>
         </NavContainer>
     )

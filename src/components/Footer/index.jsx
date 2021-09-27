@@ -32,7 +32,7 @@ function Footer() {
     return (
         <FooterContainer>
             <NightModeButton onClick={() => toggleTheme()}>
-                Changer de mode : {theme === 'light' ? 'Sombre' : 'Jour'}
+                Mode : {theme === 'light' ? 'Sombre' : 'Jour'}
             </NightModeButton>
             <CopyrightLine>Copyright Arthur della Faille. All rights reserved.</CopyrightLine>
         </FooterContainer>

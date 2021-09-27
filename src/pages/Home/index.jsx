@@ -1,19 +1,19 @@
 import styled from 'styled-components'
-import colors from '../../utils/style/colors'
 
 const HomeWrapper = styled.div`
   display: flex;
   justify-content: center;
+  background-color: black;
   height: 450px;
 `
 
 const HomeContainer = styled.div`
   margin: 70px;
-  background-color: ${colors.background};
-  width: 100%;
-  display: flex;
-  align-items: center;
   max-width: 1200px;
+  color: white;
+  font-size: 50px;
+  font-family: 'Avenir', Helvetica, sans-serif;
+  font-weight: bold;
 `
 
 function Home() {

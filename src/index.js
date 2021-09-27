@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
+// import Loader from './components/Loader'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import GlobalStyle from './utils/style/GlobalStyle'
@@ -19,6 +20,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <ThemeProvider>
+        {/* <Loader /> */}
         <GlobalStyle />
         <Header />
         <Switch>

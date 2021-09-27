@@ -10,6 +10,8 @@ const StyledGlobalStyle = createGlobalStyle`
         background-color: ${({ isDarkMode }) =>
         isDarkMode ? 'black' : 'white'};
         margin: 0;
+        text: ${({ isDarkMode }) =>
+        isDarkMode ? 'black' : 'white'};
     }
 `
 
