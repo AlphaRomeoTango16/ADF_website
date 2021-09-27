@@ -5,8 +5,25 @@ import colors from './colors';
 export const StyledLink = styled(Link)`
     padding: 10px 15px;
     text-decoration: none;
-    color: #00000;
     font-size: 18px;
+    ::after {
+        content: '';
+        width: 0px;
+        height: 1px;
+        display: block;
+        background: black;
+        transition: 300ms;
+      }
+    }
+    :hover::after {
+        width: 100%;
+    }
+    :link{
+        color: ${colors.primary};
+    }
+    :visited{
+        color: ${colors.primary};
+    }
     ${(props) =>
         props.$isFullLink &&
         `color: white;
