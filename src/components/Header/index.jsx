@@ -41,7 +41,8 @@ const LanguageButton = styled.button`
     font-family: 'Heiti SC', Helvetica, sans-serif;
     font-size: 18px;
     justify-content: space-between;
-    border: none;
+    border: 1px solid #ededed;
+    border-radius: 5px;
     cursor: pointer;
     color: ${colors.primary};
     :hover{
@@ -98,7 +99,7 @@ function Header() {
 
     return (
         <NavContainer>
-            <HomeLogo src={Logo}/>
+            <HomeLogo className="logo" src={Logo}/>
             <NavLine>
                 <StyledLink to="/">Accueil</StyledLink>
                 <StyledLink to="/projects">Projets</StyledLink>
