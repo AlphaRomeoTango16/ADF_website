@@ -13,6 +13,7 @@ const NavContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 5px 5px 15px 5px #000000;
 `
 
 const NavLine = styled.nav`

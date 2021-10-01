@@ -34,7 +34,7 @@ function Footer() {
             <NightModeButton onClick={() => toggleTheme()}>
                 Mode : {theme === 'light' ? 'Sombre' : 'Jour'}
             </NightModeButton>
-            <CopyrightLine>Copyright Arthur della Faille. All rights reserved.</CopyrightLine>
+            <CopyrightLine>Copyright ©2021 | All rights reserved, Arthur della Faille.</CopyrightLine>
         </FooterContainer>
     )
 }

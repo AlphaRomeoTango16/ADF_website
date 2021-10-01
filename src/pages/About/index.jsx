@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import ProfilPicture from '../../assets/ProfilPicture.PNG'
+import ReactLogo from '../../assets/logo/react.svg'
+import VueLogo from '../../assets/logo/vue.svg'
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -22,7 +24,7 @@ justify-content: center;
 `
 
 const PictureContainer = styled.img`
-    height: 250px;
+    height: 80%;
     border-radius: 100%;
 `
 
@@ -46,6 +48,18 @@ const AboutText = styled.p`
     color: ${colors.secondary};
 `
 
+const LogoContainer = styled.div`
+    display: flex;
+`
+
+const LogoTool = styled.img`
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 10px;
+    background-color: ${colors.secondary};
+`
+
 function About() {
     return (
         <AboutWrapper>
@@ -60,6 +74,10 @@ function About() {
                         j'ai décidé de passer du côté des créateurs en devenant développeur web full-stack.
                     </AboutText>
                     <AboutTitle>Stack technique</AboutTitle>
+                    <LogoContainer>
+                        <LogoTool src={ReactLogo} />
+                        <LogoTool src={VueLogo}/>
+                    </LogoContainer>
                 </DescriptionContainer>
             </AboutContainer>
         </AboutWrapper>
