@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { LanguageProvider } from './utils/context';
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
@@ -18,28 +19,30 @@ library.add(faChevronCircleDown, faChevronDown)
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <ThemeProvider>
-        {/* <Loader /> */}
-        <GlobalStyle />
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/projects">
-            <Projects />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/contact">
-            <Contact />
-          </Route>
-        </Switch>
-        <Footer />
-      </ThemeProvider>
-    </Router>
+    <LanguageProvider>
+      <Router>
+        <ThemeProvider>
+          {/* <Loader /> */}
+          <GlobalStyle />
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/projects">
+              <Projects />
+            </Route>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
+          </Switch>
+          <Footer />
+        </ThemeProvider>
+      </Router>
+  </LanguageProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
