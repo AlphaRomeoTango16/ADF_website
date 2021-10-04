@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+import { useContext } from 'react'
+import { ThemeContext } from '../../utils/context'
 import { StyledLink } from '../../utils/style/Atoms'
+import SwitchButton from '../SwitchButton'
 import Logo from '../../assets/Logo.png'
-import LanguageSelector from '../Language_selector'
-import { Text } from '../../utils/context'
+import darkLogo from '../../assets/Logo_dark.png'
 
 const HomeLogo = styled.img`
     height: 70px;
@@ -13,7 +15,6 @@ const NavContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 5px 5px 15px 5px #000000;
 `
 
 const NavLine = styled.nav`
@@ -25,17 +26,18 @@ const NavLine = styled.nav`
 `
 
 function Header() {
+    const { theme } = useContext(ThemeContext)
 
     return (
         <NavContainer>
-            <HomeLogo src={Logo}/>
+            <HomeLogo src={theme === 'dark' ? darkLogo : Logo}/>
             <NavLine>
-                <StyledLink to="/"><Text tid="Home" /></StyledLink>
-                <StyledLink to="/projects"><Text tid="Projects" /></StyledLink>
-                <StyledLink to="/about"><Text tid="About" /></StyledLink>
-                <StyledLink to="/contact"><Text tid="Contact" /></StyledLink>
+                <StyledLink to="/">Accueil</StyledLink>
+                <StyledLink to="/projects">Projets</StyledLink>
+                <StyledLink to="/about">À propos</StyledLink>
+                <StyledLink to="/contact">Contact</StyledLink>
             </NavLine>
-            <LanguageSelector />
+            <SwitchButton />
         </NavContainer>
     )
 }

@@ -10,6 +10,18 @@ const StyledGlobalStyle = createGlobalStyle`
         background-color: ${({ isDarkMode }) =>
         isDarkMode ? 'black' : 'white'};
         margin: 0;
+        color : ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
+        transition: color 0.50s linear;
+        transition: background-color 0.50s linear;
+    }
+    button {
+        color : ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
+    }
+    a {
+        color : ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
     }
 `
 

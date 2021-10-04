@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { LanguageProvider } from './utils/context';
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
@@ -9,8 +8,9 @@ import Contact from './pages/Contact'
 // import Loader from './components/Loader'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Error from './pages/Error'
 import GlobalStyle from './utils/style/GlobalStyle'
-import { ThemeProvider } from './utils/context'
+import { LanguageProvider, ThemeProvider } from './utils/context'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
@@ -19,9 +19,9 @@ library.add(faChevronCircleDown, faChevronDown)
 
 ReactDOM.render(
   <React.StrictMode>
-    <LanguageProvider>
       <Router>
         <ThemeProvider>
+        <LanguageProvider />
           {/* <Loader /> */}
           <GlobalStyle />
           <Header />
@@ -38,11 +38,13 @@ ReactDOM.render(
             <Route exact path="/contact">
               <Contact />
             </Route>
+            <Route path="*">
+              <Error />
+            </Route>
           </Switch>
           <Footer />
         </ThemeProvider>
       </Router>
-  </LanguageProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

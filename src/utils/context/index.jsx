@@ -1,36 +1,4 @@
-import { useState, createContext, useContext } from 'react'
-import { languageOptions, dictionaryList } from '../../languages/index'
-
-export const LanguageContext = createContext({
-    userLanguage: 'fr',
-    dictionary: dictionaryList.en
-})
-
-export function LanguageProvider({ children }) {
-    const defaultLanguage = window.localStorage.getItem('rcml-lang');
-    const [userLanguage, setUserLanguage] = useState(defaultLanguage || 'fr');
-
-    const provider = {
-        userLanguage,
-        dictionary: dictionaryList[userLanguage],
-        userLanguageChange: selected => {
-            const newLanguage = languageOptions[selected] ? selected : 'fr'
-            setUserLanguage(newLanguage);
-            window.localStorage.setItem('rcml-lang', newLanguage)
-        }
-    }
-
-    return (
-        <LanguageContext.Provider value={provider}>
-            {children}
-        </LanguageContext.Provider>
-    )
-}
-
-export function Text({ tid }) {
-    const languageContext = useContext(LanguageContext);
-    return languageContext.dictionary[tid] || tid;
-}
+import { useState, createContext } from 'react'
 
 export const ThemeContext = createContext()
 
@@ -39,9 +7,30 @@ export const ThemeProvider = ({ children }) => {
     const toggleTheme = () => {
         setTheme(theme === 'light' ? 'dark' : 'light')
     }
+    // const time = new Date().getHours();
+    // function AutomaticDarkMode() {
+    //     if (time < 19) {
+    //         return setTheme(theme === 'dark')
+    //     }
+    // };
+    // AutomaticDarkMode();
+
 
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
+            {children}
+        </ThemeContext.Provider>
+    )
+}
+
+export const LanguageProvider = ({ children }) => {
+    const[language, setLanguage] = useState('french')
+    const toggleLanguage = () => {
+        setLanguage(language === 'french' ? 'english' : 'french')
+    }
+
+    return (
+        <ThemeContext.Provider value={( language, toggleLanguage)}>
             {children}
         </ThemeContext.Provider>
     )

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import colors from './colors';
 
 export const StyledLink = styled(Link)`
     padding: 10px 15px;
@@ -18,15 +17,4 @@ export const StyledLink = styled(Link)`
     :hover::after {
         width: 100%;
     }
-    :link{
-        color: ${colors.primary};
-    }
-    :visited{
-        color: ${colors.primary};
-    }
-    ${(props) =>
-        props.$isFullLink &&
-        `color: white;
-        border-radius: 30px;
-        background-color: ${colors.primay}`}
 `
