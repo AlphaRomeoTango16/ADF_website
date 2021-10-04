@@ -1,10 +1,13 @@
 import styled from 'styled-components'
+import colors from '../../utils/style/colors'
 
 const HomeWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  background-color: black;
-  height: 450px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+background-color: ${colors.primary};
+height: 450px;
+align-items: center;
 `
 
 const HomeContainer = styled.div`

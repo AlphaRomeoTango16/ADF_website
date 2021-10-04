@@ -1,25 +1,24 @@
 import styled from 'styled-components'
+import colors from '../../utils/style/colors'
+import Card from '../../components/Card'
 
 const ProjectsWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  background-color: black;
+  background-color: ${colors.primary};
   height: 450px;
+  align-items: center;
 `
 
 const ProjectsContainer = styled.div`
-  margin: 70px;
-  max-width: 1200px;
-  color: white;
-  font-size: 50px;
-  font-family: 'Avenir', Helvetica, sans-serif;
-  font-weight: bold;
+  margin: 30px;
 `
 
 function Projects() {
     return (
         <ProjectsWrapper>
             <ProjectsContainer>
+              <Card></Card>
+              <Card></Card>
             </ProjectsContainer>
         </ProjectsWrapper>
     )
