@@ -12,8 +12,9 @@ const SwitchLabel = styled.label`
     left: 0;
     width: 42px;
     height: 26px;
-    background: #e3e3e3;
+    background: white;
     border-radius: 15px;
+    border: 1px solid black;
     cursor: pointer;
     &::after {
         content: "";
@@ -22,6 +23,7 @@ const SwitchLabel = styled.label`
         width: 18px;
         height: 18px;
         margin: 3px;
+        border: 1px solid black;
         background: white;
         box-shadow: 1px 3px 3px 1 px;
         transition: 0.2s;
@@ -49,7 +51,7 @@ const SwitchInput = styled.input`
 `
 
 function SwitchButton() {
-    
+
     return (
         <SwitchWrapper>
             <SwitchInput id="checkbox" type="checkbox" />

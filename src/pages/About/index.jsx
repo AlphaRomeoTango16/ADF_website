@@ -3,6 +3,7 @@ import colors from '../../utils/style/colors'
 import ProfilPicture from '../../assets/ProfilPicture.PNG'
 import ReactLogo from '../../assets/logo/react.svg'
 import VueLogo from '../../assets/logo/vue.svg'
+import SassLogo from '../../assets/logo/sass.svg'
 import HtmlLogo from '../../assets/logo/html.svg'
 import CssLogo from '../../assets/logo/css.svg'
 import JsLogo from '../../assets/logo/javascript.svg'
@@ -87,6 +88,7 @@ function About() {
                     <LogoContainer>
                         <a href="https://reactjs.org/"><LogoTool src={ReactLogo} title="ReactJs"/></a>
                         <a href="https://vuejs.org/"><LogoTool src={VueLogo} title="VueJs"/></a>
+                        <a href="https://sass-lang.com/"><LogoTool src={SassLogo} title="Sass"/></a>
                         <a href="https://developer.mozilla.org/fr/docs/Web/HTML"><LogoTool src={HtmlLogo} title="HMTL5"/></a>
                         <a href="https://developer.mozilla.org/fr/docs/Web/CSS"><LogoTool src={CssLogo} title="CSS3"/></a>
                         <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><LogoTool src={JsLogo} title="Javascript"/></a>

@@ -14,8 +14,9 @@ import { LanguageProvider, ThemeProvider } from './utils/context'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faChevronCircleDown, faChevronDown)
+library.add(faChevronCircleDown, faChevronDown, fab)
 
 ReactDOM.render(
   <React.StrictMode>

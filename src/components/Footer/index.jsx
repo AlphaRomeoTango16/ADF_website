@@ -1,8 +1,9 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../utils/context'
-import LinkedinLogo from '../../assets/logo/Linkedin.svg'
-import GitHubLogo from '../../assets/logo/GitHub.svg'
+// import LinkedinLogo from '../../assets/logo/Linkedin.svg'
+// import GitHubLogo from '../../assets/logo/GitHub.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const FooterContainer = styled.footer`
     display: flex;
@@ -33,9 +34,7 @@ const LogoContainer = styled.div`
     width: 70px;
 `
 
-const LogoButton = styled.img`
-    width: 30px;
-`
+const styleIcon = { fontSize: "2em" }
 
 function Footer() {
     const { toggleTheme, theme } = useContext(ThemeContext)
@@ -46,8 +45,8 @@ function Footer() {
                 Mode : {theme === 'light' ? 'Sombre' : 'Jour'}
             </NightModeButton>
             <LogoContainer>
-                <a href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><LogoButton src={LinkedinLogo} title="LinkedIn"/></a>
-                <a href="https://github.com/AlphaRomeoTango16"><LogoButton src={GitHubLogo} title="GitHub"/></a>
+                <a href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><FontAwesomeIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn"/></a>
+                <a href="https://github.com/AlphaRomeoTango16"><FontAwesomeIcon icon={['fab', 'github']} style={styleIcon} title="GitHub"/></a>
             </LogoContainer>
             <CopyrightLine>Copyright ©2021 | All rights reserved, Arthur della Faille.</CopyrightLine>
         </FooterContainer>

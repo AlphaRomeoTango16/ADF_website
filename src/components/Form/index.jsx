@@ -47,7 +47,7 @@ const InputEmail = styled.input`
 const LabelText = styled.label`
 `
 
-const InputText = styled.input`
+const TextArea = styled.textarea`
 `
 
 const InputButton = styled.input`
@@ -56,17 +56,17 @@ const InputButton = styled.input`
 function Form() {
     return (
         <FormWrapper>
-            <FormContainer>
+            <FormContainer action="form.php" method="POST">
                 <FormTitle>Rencontrons-nous</FormTitle>
                 <FirstContainer>
-                    <LabelName for="lname"/>
+                    <LabelName htmlFor="lname"/>
                     <InputName type="text" id="lname" name="Nom" placeholder="Votre nom"/>
-                    <LabelEmail for="email"/>
+                    <LabelEmail htmlFor="email"/>
                     <InputEmail type="text" id="email" name="Email" placeholder="Votre e-mail"/>
                 </FirstContainer>
                 <SecondContainer>
-                    <LabelText for="message"/>
-                    <InputText type="text" id="message" name="Message" placeholder="Votre message"/>
+                    <LabelText htmlFor="message"/>
+                    <TextArea type="text" id="message" name="Message" placeholder="Votre message"/>
                 </SecondContainer>
                 <InputButton type="submit" value="Envoyer"></InputButton>
             </FormContainer>
