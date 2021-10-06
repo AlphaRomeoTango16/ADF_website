@@ -1,62 +1,32 @@
 import styled from 'styled-components'
-// import French from '../../assets/French_flag.png'
-// import English from '../../assets/English_flag.png'
+import { useTranslation } from 'react-i18next';
 
-const SwitchWrapper = styled.div`
-    position: relative;
+const SelectButton = styled.div`
+    display: flex;
+    background-color: transparent;
+    font-size: 15px;
+`
+const ButtonFr = styled.button`
+    border-radius: 10px 0px 0px 10px;
+    border-color: 1px solid black;
 `
 
-const SwitchLabel = styled.label`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 42px;
-    height: 26px;
-    background: white;
-    border-radius: 15px;
-    border: 1px solid black;
-    cursor: pointer;
-    &::after {
-        content: "";
-        display: block;
-        border-radius: 50%;
-        width: 18px;
-        height: 18px;
-        margin: 3px;
-        border: 1px solid black;
-        background: white;
-        box-shadow: 1px 3px 3px 1 px;
-        transition: 0.2s;
-    }
-`
-
-const SwitchInput = styled.input`
-    opacity: 0;
-    z-index: 1;
-    border-radius: 15px;
-    width: 42px;
-    height: 26px;
-    &:checked + ${SwitchLabel} {
-        background: #e3e3e3;
-        &::after {
-            content: "";
-            dispaly: block;
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            margin-left: 21px;
-            transition: 0.2s;
-        }
-    }
+const ButtonEn = styled.button`
+    border-radius: 0px 10px 10px 0px;
+    border-color: 1px solid black;
 `
 
 function SwitchButton() {
+    const { i18n } = useTranslation();
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    }
 
     return (
-        <SwitchWrapper>
-            <SwitchInput id="checkbox" type="checkbox" />
-            <SwitchLabel htmlFor="checkbox"/>
-        </SwitchWrapper>
+            <SelectButton>
+                <ButtonFr onClick={() => changeLanguage('fr')}>FR 🇫🇷</ButtonFr>
+                <ButtonEn onClick={() => changeLanguage('en')}>EN 🇬🇧</ButtonEn>
+            </SelectButton>
     )
 }
 

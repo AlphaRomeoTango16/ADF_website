@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import DawnGif from '../../assets/Dawn5.gif'
+import { useTranslation } from 'react-i18next'
 
 const HomeWrapper = styled.div`
     display: flex;
@@ -29,10 +30,12 @@ const HomeTitle = styled.h1`
 `
 
 function Home() {
+    const { t } = useTranslation();
+
     return (
         <HomeWrapper>
             <HomeContainer>
-                <HomeTitle>BIENVENUE</HomeTitle>
+                <HomeTitle>{t("Welcome")}</HomeTitle>
             </HomeContainer>
         </HomeWrapper>
     )

@@ -38,6 +38,15 @@ const styleIcon = { fontSize: "2em" }
 
 function Footer() {
     const { toggleTheme, theme } = useContext(ThemeContext)
+    // const time = new Date().getHours();
+    // function AutomaticDarkMode() {
+    //     if (time >= 19) {
+    //         return theme = 'dark'
+    //     }
+    // };
+    // AutomaticDarkMode();
+    // console.log(theme)
+
 
     return (
         <FooterContainer>

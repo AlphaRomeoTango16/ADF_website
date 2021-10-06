@@ -23,6 +23,13 @@ const StyledGlobalStyle = createGlobalStyle`
         color : ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
     }
+    select {
+        color: ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
+        select::-ms-expand {
+            display: none;
+       }
+    }
 `
 
 function GlobalStyle() {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home'
@@ -9,22 +9,28 @@ import Contact from './pages/Contact'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './pages/Error'
+import './i18n'
 import GlobalStyle from './utils/style/GlobalStyle'
-import { LanguageProvider, ThemeProvider } from './utils/context'
+import { ThemeProvider } from './utils/context'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faChevronCircleDown } from '@fortawesome/free-solid-svg-icons'
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faChevronCircleDown, faChevronDown, fab)
+library.add(fab)
+
+const Loader = () => (
+  <div className="App">
+    <img className="App-logo" alt="logo" />
+    <div>loading...</div>
+  </div>
+);
 
 ReactDOM.render(
   <React.StrictMode>
       <Router>
         <ThemeProvider>
-        <LanguageProvider />
           {/* <Loader /> */}
           <GlobalStyle />
+          <Suspense fallback={<Loader />}>
           <Header />
           <Switch>
             <Route exact path="/">
@@ -44,6 +50,7 @@ ReactDOM.render(
             </Route>
           </Switch>
           <Footer />
+          </Suspense>
         </ThemeProvider>
       </Router>
   </React.StrictMode>,
