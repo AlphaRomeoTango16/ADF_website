@@ -1,25 +1,27 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import Card from '../../components/Card'
+import ProjectsData from '../../content/content.json'
 
 const ProjectsWrapper = styled.div`
   display: flex;
+  flex-direction: row;
   background-color: ${colors.primary};
   height: 450px;
   align-items: center;
+  justify-content: center;
 `
 
-const ProjectsContainer = styled.div`
-  margin: 30px;
-`
 
 function Projects() {
+  const Data = ProjectsData;
+  console.log(Data)
+  
     return (
         <ProjectsWrapper>
-            <ProjectsContainer>
-              <Card></Card>
-              <Card></Card>
-            </ProjectsContainer>
+            <Card
+                title={Data.title}
+            />
         </ProjectsWrapper>
     )
 }

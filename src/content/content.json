@@ -1,0 +1,14 @@
+{
+    "Projects": [
+        {
+            "Title": "Groupomania",
+            "Image": "./assets/Project1.PNG",
+            "Description": "Groupomania"
+        },
+        {   
+            "Title": "Black Jack Fever",
+            "Image": "./assets/Project1.PNG",
+            "Description": "Black Jack Fever"
+        }
+    ]
+}

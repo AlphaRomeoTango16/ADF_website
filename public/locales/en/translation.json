@@ -3,5 +3,16 @@
     "Home" : "Home",
     "Projects": "Projects",
     "About": "About",
-    "Contact": "Contact"
+    "Contact": "Contact",
+    "Mode": "Mode",
+    "Light": "Light",
+    "Dark": "Dark",
+    "PresentationTitle": "Hi! I'm Arthur della Faille, fullstack developer",
+    "PresentationText": "Passionate about creation in all its forms and very curious by nature, I need to discover, analyze and understand to nourish my work. After several years in the advertising sector with managerial functions, I decided to switch to the creators' side by becoming a fullstack web developer.",
+    "TechnicalStack": "Technical Stack",
+    "Meet": "Let's meet up",
+    "YourName": "Your name",
+    "YourEmail": "Your email",
+    "YourMessage": "Your message",
+    "Send": "Send"
 }

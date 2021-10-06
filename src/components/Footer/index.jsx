@@ -1,9 +1,8 @@
 import { useContext } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../utils/context'
-// import LinkedinLogo from '../../assets/logo/Linkedin.svg'
-// import GitHubLogo from '../../assets/logo/GitHub.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useTranslation } from 'react-i18next'
 
 const FooterContainer = styled.footer`
     display: flex;
@@ -38,20 +37,12 @@ const styleIcon = { fontSize: "2em" }
 
 function Footer() {
     const { toggleTheme, theme } = useContext(ThemeContext)
-    // const time = new Date().getHours();
-    // function AutomaticDarkMode() {
-    //     if (time >= 19) {
-    //         return theme = 'dark'
-    //     }
-    // };
-    // AutomaticDarkMode();
-    // console.log(theme)
-
+    const { t } = useTranslation();
 
     return (
         <FooterContainer>
             <NightModeButton onClick={() => toggleTheme()}>
-                Mode : {theme === 'light' ? 'Sombre' : 'Jour'}
+                {t("Mode")} : {theme === 'light' ? 'Sombre' : 'Jour'}
             </NightModeButton>
             <LogoContainer>
                 <a href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><FontAwesomeIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn"/></a>

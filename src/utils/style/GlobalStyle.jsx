@@ -18,6 +18,8 @@ const StyledGlobalStyle = createGlobalStyle`
     button {
         color : ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
+        border-color: ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
     }
     a {
         color : ${({ isDarkMode }) =>
@@ -26,9 +28,10 @@ const StyledGlobalStyle = createGlobalStyle`
     select {
         color: ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
-        select::-ms-expand {
-            display: none;
        }
+    buttonfr {
+        background-color: red;
+    }
     }
 `
 
