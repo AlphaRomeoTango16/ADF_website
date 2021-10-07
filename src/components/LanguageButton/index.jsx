@@ -7,29 +7,19 @@ const SelectButton = styled.div`
 `
 const ButtonFr = styled.button`
     border-radius: 10px 0px 0px 10px;
-    background-color: transparent;
     border-width: 1px;
     border-style: solid;
     cursor: pointer;
-    :hover{
-        background-color: black;
-        color: white;
-    }
 `
 
 const ButtonEn = styled.button`
     border-radius: 0px 10px 10px 0px;
-    background-color: transparent;
     border-width: 1px;
     border-style: solid;
     cursor: pointer;
-    :hover{
-        background-color: black;
-        color: white;
-    }
 `
 
-function SwitchButton() {
+function LanguageButton() {
     const { i18n } = useTranslation();
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
@@ -43,4 +33,4 @@ function SwitchButton() {
     )
 }
 
-export default SwitchButton
+export default LanguageButton

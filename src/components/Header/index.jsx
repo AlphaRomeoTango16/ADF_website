@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useContext } from 'react'
 import { ThemeContext } from '../../utils/context'
 import { StyledLink } from '../../utils/style/Atoms'
-import SwitchButton from '../SwitchButton'
+import LanguageButton from '../LanguageButton'
 import Logo from '../../assets/Logo.png'
 import darkLogo from '../../assets/Logo_dark.png'
 import { useTranslation } from 'react-i18next'
@@ -39,7 +39,7 @@ function Header() {
                 <StyledLink to="/about">{t("About")}</StyledLink>
                 <StyledLink to="/contact">{t("Contact")}</StyledLink>
             </NavLine>
-            <SwitchButton />
+            <LanguageButton />
         </NavContainer>
     )
 }

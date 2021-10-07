@@ -10,7 +10,6 @@ export const StyledLink = styled(Link)`
         width: 0px;
         height: 1px;
         display: block;
-        background: black;
         transition: 300ms;
       }
     }
@@ -18,3 +17,5 @@ export const StyledLink = styled(Link)`
         width: 100%;
     }
 `
+
+export default StyledLink

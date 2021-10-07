@@ -1,12 +1,20 @@
 import styled from 'styled-components'
 import PropTypes  from 'prop-types'
 
-const CardWrapper = styled.div`
-    position: relative;
-    width: 35%;
+const Link = styled.a`
+    display: block;
+    width: 50%;
     height: 80%;
+    margin: 30px;
+    text-decoration: none;
+`
+
+const CardWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
-    margin-left: 50px;
     background-color: black;
     box-shadow: 5px 5px 15px 5px #000000;
     cursor: pointer;
@@ -23,6 +31,7 @@ const CardVisual = styled.img`
 
 const CardContainer = styled.div`
     display: flex;
+    flex-direction: column;
     z-index: 1;
     background-color: black;
     width: 100%;
@@ -33,20 +42,36 @@ const CardContainer = styled.div`
 `
 
 const CardTitle = styled.h2`
+    color: white;
+    padding-left: 20px;
 `
 
-const CardDescription = styled.div`
+const CardDescription = styled.p`
+    color: white;
+    padding-left: 20px;
 `
 
-function card({ picture, title, description }) {
+const CardIcon = styled.div`
+
+`
+
+const Icons = styled.img`
+`
+
+function card({ image, title, description, icons, link }) {
     return (
-        <CardWrapper>
-            <CardVisual src={picture}/>
-            <CardContainer>
-                <CardTitle>{title}</CardTitle>
-                <CardDescription>{description}</CardDescription>
-            </CardContainer>
-        </CardWrapper>
+        <Link href={link}>
+            <CardWrapper>
+                <CardVisual src={image}/>
+                <CardContainer>
+                    <CardTitle>{title}</CardTitle>
+                    <CardDescription>{description}</CardDescription>
+                    <CardIcon>
+                        <Icons>{icons}</Icons>
+                    </CardIcon>
+                </CardContainer>
+            </CardWrapper>
+        </Link>
     )
 }
 
@@ -54,6 +79,8 @@ card.propTypes = {
     image : PropTypes.string.isRequired,
     title : PropTypes.string.isRequired,
     description : PropTypes.string.isRequired,
+    icons: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired
 }
 
 export default card

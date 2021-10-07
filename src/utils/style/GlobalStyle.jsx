@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { ThemeContext } from '../context'
+import StyledLink from '../style/Atoms'
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
@@ -20,18 +21,29 @@ const StyledGlobalStyle = createGlobalStyle`
         isDarkMode ? 'white' : 'black'};
         border-color: ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
+        background-color: ${({ isDarkMode }) =>
+        isDarkMode ? 'black' : 'white'};
+        :hover {
+            background-color: ${({ isDarkMode }) =>
+            isDarkMode ? 'white' : 'black'};
+            color : ${({ isDarkMode }) =>
+            isDarkMode ? 'black' : 'white'};
+        }
     }
     a {
         color : ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
     }
+    ${StyledLink} {
+        ::after {
+            background: ${({ isDarkMode }) =>
+            isDarkMode ? 'white' : 'black'};
+          }
+    }
     select {
         color: ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
        }
-    buttonfr {
-        background-color: red;
-    }
     }
 `
 
