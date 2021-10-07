@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-import DawnGif from '../../assets/Dawn5.gif'
+// import DawnGif from '../../assets/Dawn5.gif'
+import Afterburner from '../../assets/Afterburner.gif'
+import Flyby from '../../assets/Flyby.gif'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet'
 
 const HomeWrapper = styled.div`
     display: flex;
-    flex-direction: column;
     justify-content: center;
     background-color: ${colors.primary};
     height: 450px;
@@ -15,13 +17,30 @@ const HomeWrapper = styled.div`
 const HomeContainer = styled.div`
     margin: 70px;
     max-width: 1200px;
+    display: flex;
+    flex-direction: row;
 `
 
-const HomeTitle = styled.h1`
+const HomeTitle = styled.div`
     font-family: 'Anton', Helvetica, sans-serif;
-    font-size: 90px;
+    margin: 0;
+    font-size: 80px;
     font-weight: bold;
-    background-image: url(${DawnGif});
+    background-image: url(${Flyby});
+    background-size: contain;
+    color: transparent;
+    -moz-background-clip: text;
+	-webkit-background-clip: text;
+    line-height: 130px;
+`
+
+const HomeTitle2 = styled.div`
+    font-family: 'Anton', Helvetica, sans-serif;
+    margin: 0;
+    font-size: 80px;
+    font-weight: bold;
+    background-image: url(${Afterburner});
+    margin-left: 20px;
     background-size: contain;
     color: transparent;
     -moz-background-clip: text;
@@ -29,15 +48,22 @@ const HomeTitle = styled.h1`
     line-height: 200px;
 `
 
+
 function Home() {
     const { t } = useTranslation();
 
     return (
-        <HomeWrapper>
-            <HomeContainer>
-                <HomeTitle>{t("Welcome")}</HomeTitle>
-            </HomeContainer>
-        </HomeWrapper>
+        <div>
+            <Helmet>
+                <title>| {t("Home")}</title>
+            </Helmet>
+            <HomeWrapper>
+                <HomeContainer>
+                        <HomeTitle>{t("Welcome")}</HomeTitle>
+                        <HomeTitle2>{t("Welcome")}</HomeTitle2>
+                </HomeContainer>
+            </HomeWrapper>
+        </div>
     )
 }
 

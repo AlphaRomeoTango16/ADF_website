@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import Ron from '../../assets/Error.gif'
+import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet'
 
 const ErrorWrapper = styled.div`
     display: flex;
@@ -42,13 +44,20 @@ const ErrorGif = styled.img`
 `
 
 function Error() {
+    const { t } = useTranslation();
+
     return (
+        <div>
+        <Helmet>
+            <title>| {t("Error")}</title>
+        </Helmet>
         <ErrorWrapper>
             <ErrorNumber>404</ErrorNumber>
             <ErrorTitle>Oups...</ErrorTitle>
             <ErrorSubtitle></ErrorSubtitle>
             <ErrorGif src={Ron}></ErrorGif>
         </ErrorWrapper>
+        </div>
     )
 }
 

@@ -10,10 +10,9 @@ const Link = styled.a`
 `
 
 const CardWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+    position: relative;
+    width: 89%;
+    height: 83%;
     border-radius: 20px;
     background-color: black;
     box-shadow: 5px 5px 15px 5px #000000;
@@ -22,22 +21,21 @@ const CardWrapper = styled.div`
 `
 
 const CardVisual = styled.img`
-    display: flex;
-    align-items: start;
-    z-index: 2;
+    position: relative;
     width: 100%;
+    height: 100%;
     object-fit: contain;
 `
 
 const CardContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    background-color: black;
+    position: absolute;
+    background-color: RGBA(0,0,0,0.87);
+    bottom: -80%;
     width: 100%;
     height: 100%;
-    :hover{
-
+    transition: transform 2s;
+    :hover {
+        transform: translateY(-80%);
     }
 `
 

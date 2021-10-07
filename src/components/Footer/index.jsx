@@ -53,7 +53,14 @@ const SliderSwitch = styled.span`
     transition: .4s;
     :before{
         position: absolute;
-        content: "";
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        font-size: 15px;
+        font-family: "Font Awesome 5 Free";
+        content: "\f185";
+        color: black;
         height: 21px;
         width: 20px;
         left: 2px;
@@ -80,7 +87,7 @@ const InputSwitch = styled.input`
 const styleIcon = { fontSize: "2em" }
 
 function Footer() {
-    const { toggleTheme } = useContext(ThemeContext)
+    const { toggleTheme, theme } = useContext(ThemeContext)
     // const { t } = useTranslation();
 
     return (
@@ -88,6 +95,7 @@ function Footer() {
             <LabelSwitch onChange={() => toggleTheme()}>
                 <InputSwitch type="checkbox" />
                 <SliderSwitch></SliderSwitch>
+                {/* <SliderSwitch ><FontAwesomeIcon icon={theme === 'light' ? "sun" : "moon"}/></SliderSwitch> */}
             </LabelSwitch>
             {/* <NightModeButton onClick={() => toggleTheme()}>
                 {t("Mode")} : {theme === 'light' ? 'Sombre' : 'Jour'}

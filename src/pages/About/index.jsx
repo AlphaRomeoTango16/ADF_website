@@ -9,6 +9,7 @@ import CssLogo from '../../assets/logo/css.svg'
 import JsLogo from '../../assets/logo/javascript.svg'
 import NodeLogo from '../../assets/logo/nodejs.svg'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet'
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -76,6 +77,10 @@ function About() {
     const { t } = useTranslation();
 
     return (
+        <div>
+        <Helmet>
+            <title>| {t("About")}</title>
+        </Helmet>
         <AboutWrapper>
             <AboutContainer>
                 <PictureContainer src={ProfilPicture} />
@@ -95,6 +100,7 @@ function About() {
                 </DescriptionContainer>
             </AboutContainer>
         </AboutWrapper>
+        </div>
     )
 }
 
