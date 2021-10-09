@@ -40,6 +40,7 @@ const LabelSwitch = styled.label`
     height: 25px;
     margin-bottom: 20px;
 `
+
 const SliderSwitch = styled.span`
     position: absolute;
     cursor: pointer;
@@ -56,11 +57,13 @@ const SliderSwitch = styled.span`
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: white;
+        background-color: ${({ isDarkMode }) =>
+        isDarkMode ? 'black' : 'white'};
         font-size: 15px;
         font-family: "Font Awesome 5 Free";
-        content: "\f185";
-        color: black;
+        content: attr(data-fa-icon);
+        color: ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
         height: 21px;
         width: 20px;
         left: 2px;
@@ -94,8 +97,7 @@ function Footer() {
         <FooterContainer>
             <LabelSwitch onChange={() => toggleTheme()}>
                 <InputSwitch type="checkbox" />
-                <SliderSwitch></SliderSwitch>
-                {/* <SliderSwitch ><FontAwesomeIcon icon={theme === 'light' ? "sun" : "moon"}/></SliderSwitch> */}
+                <SliderSwitch isDarkMode={theme === 'dark'}  data-fa-icon={theme === 'light' ? "" : ""}></SliderSwitch>
             </LabelSwitch>
             {/* <NightModeButton onClick={() => toggleTheme()}>
                 {t("Mode")} : {theme === 'light' ? 'Sombre' : 'Jour'}

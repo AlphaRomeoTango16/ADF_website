@@ -1,15 +1,16 @@
 import styled from 'styled-components'
-import { useContext } from 'react'
-import { ThemeContext } from '../../utils/context'
+// import { useContext } from 'react'
+// import { ThemeContext } from '../../utils/context'
 import { StyledLink } from '../../utils/style/Atoms'
 import LanguageButton from '../LanguageButton'
-import Logo from '../../assets/Logo.png'
-import darkLogo from '../../assets/Logo_dark.png'
+// import Logo from '../../assets/Logo.png'
+// import darkLogo from '../../assets/Logo_dark.png'
 import { useTranslation } from 'react-i18next'
+import Logo from '../Logo/index'
 
-const HomeLogo = styled.img`
-    height: 70px;
-`
+// const HomeLogo = styled.img`
+//     height: 70px;
+// `
 
 const NavContainer = styled.nav`
     padding: 30px;
@@ -27,12 +28,13 @@ const NavLine = styled.nav`
 `
 
 function Header() {
-    const { theme } = useContext(ThemeContext)
+    // const { theme } = useContext(ThemeContext)
     const { t } = useTranslation();
 
     return (
         <NavContainer>
-            <HomeLogo src={theme === 'dark' ? darkLogo : Logo}/>
+            <Logo />
+            {/* <HomeLogo src={theme === 'dark' ? darkLogo : Logo}/> */}
             <NavLine>
                 <StyledLink to="/">{t("Home")}</StyledLink>
                 <StyledLink to="/projects">{t("Projects")}</StyledLink>
