@@ -7,13 +7,13 @@ const FormWrapper = styled.div`
 `
 
 const FormContainer = styled.form`
+    box-shadow: 5px 5px 15px 5px #000000;   
     width: 800px;
-    height: 350px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     background-color: ${colors.primary};
     border-radius: 10px;
-    padding: 20px;
     margin: 0;
 `
 
@@ -21,6 +21,8 @@ const FormTitle = styled.h2`
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-weight: 300;
     font-size: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
     margin-top: 0;
     margin-bottom: 20px;
 `
@@ -71,6 +73,7 @@ border-radius: 0px 0px 10px 10px;
 border: 1px solid black;
 :hover{
     background-color: black;
+    border: 1px solid white;
     color: white;
 }
 `

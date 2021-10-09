@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { ThemeContext } from '../../utils/context'
+import { useContext } from 'react'
 
 const LogoContainer = styled.div`
     width: 100px;
@@ -14,16 +16,21 @@ const LogoLetter = styled.p`
     transition: all 2s;
     :hover {
         text-shadow: -2px 1px 9px rgba(150, 150, 150, 0.88);
-        -webkit-text-stroke: 1px black;
-        color: white;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
+        color: ${({ isDarkMode }) =>
+        isDarkMode ? 'black' : 'white'};
         letter-spacing: 5px;
     }
 `
 
 function Logo() {
+    const { theme } = useContext(ThemeContext)
+
     return (
         <LogoContainer>
-            <LogoLetter>ADF</LogoLetter>
+            <LogoLetter isDarkMode={theme === 'dark'}>ADF</LogoLetter>
         </LogoContainer>
     )
 }

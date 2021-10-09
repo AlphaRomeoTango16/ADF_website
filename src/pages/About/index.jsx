@@ -70,6 +70,7 @@ const LogoTool = styled.img`
     cursor: pointer;
     :hover{
         background-color: #757575;
+        filter: grayscale(100%) blur(1px);
     }
 `
 
