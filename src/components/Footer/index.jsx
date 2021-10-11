@@ -62,6 +62,7 @@ const SliderSwitch = styled.span`
         isDarkMode ? 'black' : 'white'};
         font-size: 15px;
         font-family: "Font Awesome 5 Free";
+        font-weight: 500;
         content: attr(data-fa-icon);
         color: ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
@@ -113,8 +114,7 @@ function Footer() {
             </NightModeButton> */}
             <LogoContainer>
                 <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><FontAwesomeIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn"/></IconMe>
-                <IconMe href="https://github.com/AlphaRomeoTango16"><FontAwesomeIcon icon={['fab', 'github']} style={styleIcon} title="GitHub"/></IconMe>
-            </LogoContainer>
+                <IconMe href="https://github.com/AlphaRomeoTango16"><FontAwesomeIcon icon={['fab', 'github']} style={styleIcon} title="GitHub"/></IconMe>            </LogoContainer>
             <CopyrightLine>Copyright ©2021 | All rights reserved, Arthur della Faille.</CopyrightLine>
         </FooterContainer>
     )

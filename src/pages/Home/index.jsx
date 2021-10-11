@@ -24,14 +24,14 @@ const HomeContainer = styled.div`
 const HomeTitle = styled.div`
     font-family: 'Anton', Helvetica, sans-serif;
     margin: 0;
-    font-size: 80px;
+    font-size: 350px;
     font-weight: bold;
     background-image: url(${Flyby});
-    background-size: contain;
+    background-size: 200%;
     color: transparent;
     -moz-background-clip: text;
 	-webkit-background-clip: text;
-    line-height: 130px;
+    line-height: 200px;
 `
 
 const HomeTitle2 = styled.div`
@@ -58,7 +58,7 @@ function Home() {
             </Helmet>
             <HomeWrapper>
                 <HomeContainer>
-                        <HomeTitle>{t("Welcome")}</HomeTitle>
+                        <HomeTitle>{t("W")}</HomeTitle>
                         <HomeTitle2>{t("Welcome")}</HomeTitle2>
                 </HomeContainer>
             </HomeWrapper>
