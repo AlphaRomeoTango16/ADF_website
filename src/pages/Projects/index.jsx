@@ -9,6 +9,7 @@ import JavascriptIcon from '../../assets/logo/javascript.svg'
 import NodeIcon from '../../assets/logo/nodejs.svg'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet'
+// import { icons } from 'react-icons'
 
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -24,12 +25,12 @@ const projectList = [
       "title": "Groupomania",
       "image": ProjectPicture1,
       "description": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
-      "icons": {
-        "VueIcon": VueIcon,
-        "HtmlIcon": HtmlIcon,
-        "CssIcon" : CssIcon,
-        "JavascriptIcon" : JavascriptIcon,
-        "NodeIcon": NodeIcon },
+      "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
+        // "1": VueIcon,
+        // "2": HtmlIcon,
+        // "3" : CssIcon,
+        // "4" : JavascriptIcon,
+        // "5": NodeIcon },
       "link": "https://github.com/AlphaRomeoTango16/Groupomania"
   },
 ]
@@ -49,6 +50,9 @@ function Projects() {
             title={project.title}
             description={project.description}
             image={project.image}
+            // icons={project.iconsList.map((iconsList) =>(
+            //   iconsList
+            // ))}
             // icons={project.icons}
             link={project.link}
             />

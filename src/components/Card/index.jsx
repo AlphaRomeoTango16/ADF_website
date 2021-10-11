@@ -24,7 +24,7 @@ const CardVisual = styled.img`
     position: relative;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: fill;
 `
 
 const CardContainer = styled.div`
@@ -77,7 +77,7 @@ card.propTypes = {
     image : PropTypes.string.isRequired,
     title : PropTypes.string.isRequired,
     description : PropTypes.string.isRequired,
-    icons: PropTypes.string.isRequired,
+    icons: PropTypes.array.isRequired,
     link: PropTypes.string.isRequired
 }
 

@@ -2,8 +2,12 @@ import styled from 'styled-components'
 import { ThemeContext } from '../../utils/context'
 import { useContext } from 'react'
 
+const Link = styled.a`
+    text-decoration: none;
+`
+
 const LogoContainer = styled.div`
-    width: 100px;
+    width: 200px;
 `
 
 const LogoLetter = styled.p`
@@ -16,12 +20,11 @@ const LogoLetter = styled.p`
     transition: all 2s;
     :hover {
         text-shadow: -2px 1px 9px rgba(150, 150, 150, 0.88);
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
-        color: ${({ isDarkMode }) =>
-        isDarkMode ? 'black' : 'white'};
+        color: transparent;
         letter-spacing: 5px;
+        background: repeating-linear-gradient(45deg, black, black 30px, white 30px, white 60px);
+        background-clip: text;
+        -webkit-background-clip: text;
     }
 `
 
@@ -29,9 +32,11 @@ function Logo() {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <LogoContainer>
-            <LogoLetter isDarkMode={theme === 'dark'}>ADF</LogoLetter>
-        </LogoContainer>
+        <Link href="/">
+            <LogoContainer>
+                <LogoLetter isDarkMode={theme === 'dark'}>ADF</LogoLetter>
+            </LogoContainer>
+        </Link>
     )
 }
 

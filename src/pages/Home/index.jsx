@@ -48,7 +48,6 @@ const HomeTitle2 = styled.div`
     line-height: 200px;
 `
 
-
 function Home() {
     const { t } = useTranslation();
 

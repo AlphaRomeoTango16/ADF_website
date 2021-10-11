@@ -50,6 +50,7 @@ const SliderSwitch = styled.span`
     bottom: 0;
     border-radius: 20px;
     background-color: #b5b5b5;
+    box-shadow: inset 0px 0px 5px 2px #595959;
     -webkit-transition: .4s;
     transition: .4s;
     :before{
@@ -64,6 +65,7 @@ const SliderSwitch = styled.span`
         content: attr(data-fa-icon);
         color: ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
+        box-shadow: 0px 0px 2px 2px #595959;
         height: 21px;
         width: 20px;
         left: 2px;

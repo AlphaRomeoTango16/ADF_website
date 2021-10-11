@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
-// import Loader from './components/Loader'
+// import LoaderScreen from './components/LoaderScreen'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './pages/Error'
@@ -30,7 +30,7 @@ ReactDOM.render(
   <React.StrictMode>
       <Router>
         <ThemeProvider>
-          {/* <Loader /> */}
+          {/* <LoaderScreen /> */}
           <GlobalStyle />
           <Suspense fallback={<Loader />}>
           <Header />

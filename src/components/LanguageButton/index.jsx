@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 
 const SelectButton = styled.div`
     display: flex;
+    justify-content: flex-end;
     font-size: 15px;
+    width: 200px;
 `
 const ButtonFr = styled.button`
     border-radius: 10px 0px 0px 10px;
