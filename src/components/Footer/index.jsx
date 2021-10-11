@@ -89,7 +89,14 @@ const InputSwitch = styled.input`
     }
 `
 
-const styleIcon = { fontSize: "2em" }
+const IconMe = styled.a`
+    transition: all 0.5s;
+    &:hover{
+        transform: translateY(-5px);
+    }
+`
+
+const styleIcon = { fontSize: "2em", textShadow: "2px 2px 2px #CE5937" }
 
 function Footer() {
     const { toggleTheme, theme } = useContext(ThemeContext)
@@ -105,8 +112,8 @@ function Footer() {
                 {t("Mode")} : {theme === 'light' ? 'Sombre' : 'Jour'}
             </NightModeButton> */}
             <LogoContainer>
-                <a href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><FontAwesomeIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn"/></a>
-                <a href="https://github.com/AlphaRomeoTango16"><FontAwesomeIcon icon={['fab', 'github']} style={styleIcon} title="GitHub"/></a>
+                <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><FontAwesomeIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn"/></IconMe>
+                <IconMe href="https://github.com/AlphaRomeoTango16"><FontAwesomeIcon icon={['fab', 'github']} style={styleIcon} title="GitHub"/></IconMe>
             </LogoContainer>
             <CopyrightLine>Copyright ©2021 | All rights reserved, Arthur della Faille.</CopyrightLine>
         </FooterContainer>

@@ -42,11 +42,13 @@ const CardContainer = styled.div`
 const CardTitle = styled.h2`
     color: white;
     padding-left: 20px;
+    padding-right: 20px;
 `
 
 const CardDescription = styled.p`
     color: white;
     padding-left: 20px;
+    padding-right: 20px;
 `
 
 const CardIcon = styled.div`
