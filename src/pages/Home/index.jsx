@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import colors from '../../utils/style/colors'
 import { useTranslation } from 'react-i18next'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import Dawn from '../../assets/Dawn5.gif'
 
 const HomeWrapper = styled.div`
@@ -19,6 +19,8 @@ const HomeContainer = styled.div`
 
 const HomeTitle = styled.div`
     font-family: 'Raleway', Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
     margin: 0;
     font-size: 50px;
     line-height: 70px;
@@ -47,12 +49,46 @@ const MeLink = styled.div`
     padding-left: 15px;
     cursor: pointer;
     text-decoration: none;
+    transition: all ease-out 2s;
     :hover{
         background-image: url(${Dawn});
         background-size: 100%;
+        font-size: 80px;
         color: transparent;
         -moz-background-clip: text;
         -webkit-background-clip: text;
+    }
+`
+
+const Link = styled.a`
+    text-decoration: none;
+`
+
+const hello = keyframes`
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+`
+
+const HandIcon = styled.div`
+    width: 100px;
+    margin: 0;
+    cursor: pointer;
+    :hover{
+        animation: ${hello} 1s infinite;
+        }
     }
 `
 
@@ -66,10 +102,10 @@ function Home() {
             </Helmet>
             <HomeWrapper>
                 <HomeContainer>
-                        <HomeTitle>{t("Welcome1")}</HomeTitle>
+                        <HomeTitle>{t("Welcome1")}<HandIcon>👋</HandIcon></HomeTitle>
                         <LineTitle>
                             <HomeTitle>{t("Welcome2")}</HomeTitle>
-                            <MeLink href="/about">Arthur</MeLink>
+                            <Link href="/about"><MeLink>Arthur</MeLink></Link>
                         </LineTitle>
                         <HomeTitle>{t("Welcome3")}</HomeTitle>
                         <Tools>ReactJs &nbsp;/&nbsp; VueJs &nbsp;/&nbsp; Sass &nbsp;/&nbsp; NodeJs &nbsp;/&nbsp; Express</Tools>

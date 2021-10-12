@@ -6,6 +6,12 @@ const SelectButton = styled.div`
     justify-content: flex-end;
     font-size: 15px;
     width: 200px;
+    @media screen and (max-width: 1200px) {
+        display: none;
+      }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 `
 const ButtonFr = styled.button`
     border-radius: 10px 0px 0px 10px;

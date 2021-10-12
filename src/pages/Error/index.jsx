@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import Ron from '../../assets/Error.gif'
 import { useTranslation } from 'react-i18next'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
 const ErrorWrapper = styled.div`
     display: flex;

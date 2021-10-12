@@ -25,6 +25,19 @@ const NavLine = styled.nav`
     padding: 20px;
     align-item: center;
     justify-content: space-between;
+    @media screen and (max-width: 1200px) {
+        background-color: red;
+      }
+    @media screen and (max-width: 768px) {
+        background-color: pink;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 20%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
 `
 
 function Header() {

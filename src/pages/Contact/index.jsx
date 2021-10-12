@@ -2,15 +2,15 @@ import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import Form from '../../components/Form'
 import { useTranslation } from 'react-i18next'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
 const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: ${colors.primary};
-  height: 60vh;
   align-items: center;
+  padding: 50px 0px 50px 0px;
 `
 
 const ContactContainer = styled.div`

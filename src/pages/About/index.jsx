@@ -9,14 +9,13 @@ import CssLogo from '../../assets/logo/css.svg'
 import JsLogo from '../../assets/logo/javascript.svg'
 import NodeLogo from '../../assets/logo/nodejs.svg'
 import { useTranslation } from 'react-i18next'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import Malt from '../../assets/Logo_Malt.svg'
 
 const AboutWrapper = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${colors.primary};
-  height: 70vh;
 `
 
 const AboutContainer = styled.div`
@@ -29,22 +28,45 @@ font-size: 50px;
 font-family: 'Avenir', Helvetica, sans-serif;
 font-weight: bold;
 justify-content: center;
+@media screen and (max-width: 1200px) {
+
+  }
+@media screen and (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin: 30px 0px 30px 0px;
+}
 `
 
 const PictureContainer = styled.img`
     height: 300px;
     border-radius: 100%;
+    @media screen and (max-width: 1200px) {
+        height: 300px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 30%;
+        height: 30%;
+        padding-top: 20px;
+  }
 `
 
 const DescriptionContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding-left: 50px;
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 10px;
+  }
 `
 
 const AboutTitle = styled.h2`
     font-family: 'Montserrat', Helvetica, sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 25px;
     margin: 0px;
     color: ${colors.secondary};
@@ -60,7 +82,7 @@ const AboutText = styled.p`
 
 const TechnicalTitle = styled.h2`
     font-family: 'Montserrat', Helvetica, sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 25px;
     margin: 20px 0px 0px 0px;
     color: ${colors.secondary};
@@ -68,6 +90,7 @@ const TechnicalTitle = styled.h2`
 
 const LogoContainer = styled.div`
     display: flex;
+    margin: 10px 0px 0px 0px;
 `
 
 const LogoTool = styled.img`
@@ -86,9 +109,9 @@ const LogoTool = styled.img`
 
 const FreelanceTitle = styled.h2`
     font-family: 'Montserrat', Helvetica, sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 25px;
-    margin: 15px 0px 0px 0px;
+    margin: 20px 0px 0px 0px;
     color: ${colors.secondary};
 `
 

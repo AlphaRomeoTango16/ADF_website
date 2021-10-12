@@ -13,8 +13,8 @@ const Link = styled.a`
 
 const CardWrapper = styled.div`
     position: relative;
-    width: 89%;
-    height: 83%;
+    width: 600px;
+    height: 400px;
     background-color: black;
     box-shadow: 5px 5px 15px 5px #000000;
     cursor: pointer;
@@ -31,12 +31,12 @@ const CardVisual = styled.img`
 const CardContainer = styled.div`
     position: absolute;
     background-color: RGBA(0,0,0,0.87);
-    bottom: -80%;
+    bottom: -85%;
     width: 100%;
     height: 100%;
     transition: transform 2s;
     :hover {
-        transform: translateY(-80%);
+        transform: translateY(-85%);
     }
 `
 
@@ -53,10 +53,15 @@ const CardDescription = styled.p`
 `
 
 const CardIcon = styled.div`
-
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 20px;
 `
 
-const Icons = styled.img`
+const Icon = styled.img`
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
 `
 
 function card({ image, title, description, icons, link }) {
@@ -67,9 +72,9 @@ function card({ image, title, description, icons, link }) {
                 <CardContainer>
                     <CardTitle>{title}</CardTitle>
                     <CardDescription>{description}</CardDescription>
-                    <CardIcon>
-                        <Icons>{icons}</Icons>
-                    </CardIcon>
+                    <CardIcon>{icons.map((icon, index) => 
+                        <Icon key={index} src={icon} alt="icon"/>
+                    )}</CardIcon>
                 </CardContainer>
             </CardWrapper>
         </Link>

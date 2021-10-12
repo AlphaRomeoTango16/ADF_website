@@ -26,11 +26,6 @@ const projectList = [
       "image": ProjectPicture1,
       "description": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
       "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
-        // "1": VueIcon,
-        // "2": HtmlIcon,
-        // "3" : CssIcon,
-        // "4" : JavascriptIcon,
-        // "5": NodeIcon },
       "link": "https://github.com/AlphaRomeoTango16/Groupomania"
   },
 ]
@@ -50,10 +45,7 @@ function Projects() {
             title={project.title}
             description={project.description}
             image={project.image}
-            // icons={project.iconsList.map((iconsList) =>(
-            //   iconsList
-            // ))}
-            // icons={project.icons}
+            icons={project.iconsList}
             link={project.link}
             />
           ))}

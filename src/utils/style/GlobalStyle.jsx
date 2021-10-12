@@ -19,6 +19,17 @@ const StyledGlobalStyle = createGlobalStyle`
         transition: color 0.50s linear;
         transition: background-color 0.50s linear;
     }
+    @media screen and (max-width: 1200px) {
+        body {
+          background-color: blue;
+        }
+      }
+    @media screen and (max-width: 768px) {
+        body {
+          background-color: olive;
+        }
+    }
+
     #root {
         display: flex;
         flex-direction: column;

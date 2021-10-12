@@ -7,9 +7,6 @@ const FormWrapper = styled.div`
 `
 
 const FormContainer = styled.form`
-    box-shadow: 5px 5px 15px 5px #000000;   
-    width: 800px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     background-color: ${colors.primary};
@@ -19,17 +16,32 @@ const FormContainer = styled.form`
 
 const FormTitle = styled.h2`
     font-family: 'Montserrat', Helvetica, sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 25px;
     padding-top: 20px;
     padding-left: 20px;
     margin-top: 0;
     margin-bottom: 20px;
+    @media screen and (max-width: 1200px) {
+        
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        padding-left: 0;
+        display: flex;
+        margin: auto;
+  }
 `
 
 const FirstContainer = styled.div`
     display: flex;
     flex-direction: row;
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+  }
 `
 
 const SecondContainer = styled.div`
@@ -43,6 +55,13 @@ const InputName = styled.input`
 width: 50%;
 height: 50px;
 padding-left: 20px;
+margin: 10px;
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 768px) {
+    width: 77%;
+}
 `
 
 const LabelEmail = styled.label`
@@ -52,6 +71,13 @@ const InputEmail = styled.input`
 width: 50%;
 height: 50px;
 padding-left: 20px;
+margin: 10px;
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 768px) {
+    width: 77%;
+}
 `
 
 const LabelText = styled.label`
@@ -62,19 +88,40 @@ width: 100%;
 height: 100px;
 padding-left: 20px;
 padding-top: 20px;
+margin: 10px;
 `
 
-const InputButton = styled.input`
+const InputButton = styled.button`
+display: inline-block;
+margin: 10px;
+position: relative;
 height: 50px;
 font-size: 15px;
 font-weight: bold;
 cursor: pointer;
-border-radius: 0px 0px 10px 10px;
-border: 1px solid black;
+border: 1px solid white;
+color: white;
+background: transparent;
+z-index: 1;
+overflow: hidden;
+transition: 0.08s ease-in;
 :hover{
-    background-color: black;
-    border: 1px solid white;
-    color: white;
+    color: black;
+}
+:before{
+    content: '';
+    position: absolute;
+    background: white;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 100%;
+    z-index: -1;
+    transition: right .3s;
+}
+:hover:before{
+    right: 0;
+    color: black;
 }
 `
 
@@ -95,7 +142,7 @@ function Form() {
                     <LabelText htmlFor="message"/>
                     <TextArea type="text" id="message" name="Message" placeholder={t("YourMessage")}/>
                 </SecondContainer>
-                <InputButton type="submit" value={t("Send")}></InputButton>
+                <InputButton type="submit" value={t("Send")}>{t("Send")}</InputButton>
             </FormContainer>
         </FormWrapper>
     )

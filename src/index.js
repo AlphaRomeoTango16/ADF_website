@@ -16,6 +16,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
+import { HelmetProvider } from 'react-helmet-async'
 
 library.add(fab, faSun, faMoon)
 
@@ -28,6 +29,7 @@ const Loader = () => (
 
 ReactDOM.render(
   <React.StrictMode>
+    <HelmetProvider>
       <Router>
         <ThemeProvider>
           {/* <LoaderScreen /> */}
@@ -55,6 +57,7 @@ ReactDOM.render(
           </Suspense>
         </ThemeProvider>
       </Router>
+    </HelmetProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
