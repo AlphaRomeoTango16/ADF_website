@@ -10,12 +10,13 @@ import JsLogo from '../../assets/logo/javascript.svg'
 import NodeLogo from '../../assets/logo/nodejs.svg'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet'
+import Malt from '../../assets/Logo_Malt.svg'
 
 const AboutWrapper = styled.div`
   display: flex;
   justify-content: center;
   background-color: ${colors.primary};
-  height: 450px;
+  height: 70vh;
 `
 
 const AboutContainer = styled.div`
@@ -31,7 +32,7 @@ justify-content: center;
 `
 
 const PictureContainer = styled.img`
-    height: 80%;
+    height: 300px;
     border-radius: 100%;
 `
 
@@ -45,7 +46,7 @@ const AboutTitle = styled.h2`
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-weight: 300;
     font-size: 25px;
-    margin: 15px 0px 15px 0px;
+    margin: 0px;
     color: ${colors.secondary};
 `
 
@@ -53,6 +54,15 @@ const AboutText = styled.p`
     font-family: 'Montserrat', Helvetica, sans-serif;
     font-weight: 100;
     font-size: 15px;
+    margin: 10px 0px 0px 0px;
+    color: ${colors.secondary};
+`
+
+const TechnicalTitle = styled.h2`
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    margin: 20px 0px 0px 0px;
     color: ${colors.secondary};
 `
 
@@ -74,6 +84,28 @@ const LogoTool = styled.img`
     }
 `
 
+const FreelanceTitle = styled.h2`
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 25px;
+    margin: 15px 0px 0px 0px;
+    color: ${colors.secondary};
+`
+
+const FreelanceDescription = styled.p`
+    display: flex;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    margin: 10px 0px 0px 0px;
+    color: ${colors.secondary};
+`
+
+const FreelanceImage = styled.img`
+    width: 50px;
+    padding-left: 5px;
+`
+
 function About() {
     const { t } = useTranslation();
 
@@ -88,7 +120,7 @@ function About() {
                 <DescriptionContainer>
                     <AboutTitle>{t("PresentationTitle")}</AboutTitle>
                     <AboutText>{t("PresentationText")}</AboutText>
-                    <AboutTitle>{t("TechnicalStack")}</AboutTitle>
+                    <TechnicalTitle>{t("TechnicalStack")}</TechnicalTitle>
                     <LogoContainer>
                         <a href="https://reactjs.org/"><LogoTool src={ReactLogo} title="ReactJs"/></a>
                         <a href="https://vuejs.org/"><LogoTool src={VueLogo} title="VueJs"/></a>
@@ -98,6 +130,8 @@ function About() {
                         <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><LogoTool src={JsLogo} title="Javascript"/></a>
                         <a href="https://nodejs.org/en/"><LogoTool src={NodeLogo} title="NodeJs"/></a>
                     </LogoContainer>
+                    <FreelanceTitle>{t("FreelanceTitle")}</FreelanceTitle>
+                    <FreelanceDescription>{t("FreelanceDescription")}<a href="https://www.malt.fr/profile/ardellafaille"><FreelanceImage src={Malt} /></a></FreelanceDescription>
                 </DescriptionContainer>
             </AboutContainer>
         </AboutWrapper>

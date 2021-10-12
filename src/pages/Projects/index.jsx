@@ -15,7 +15,7 @@ const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   background-color: ${colors.primary};
-  height: 450px;
+  height: 60vh;
   align-items: center;
   justify-content: center;
 `

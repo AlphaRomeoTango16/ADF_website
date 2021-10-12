@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import PropTypes  from 'prop-types'
 
 const Link = styled.a`
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     height: 80%;
     margin: 30px;
@@ -13,7 +15,6 @@ const CardWrapper = styled.div`
     position: relative;
     width: 89%;
     height: 83%;
-    border-radius: 20px;
     background-color: black;
     box-shadow: 5px 5px 15px 5px #000000;
     cursor: pointer;

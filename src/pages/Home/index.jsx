@@ -1,51 +1,59 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
-// import DawnGif from '../../assets/Dawn5.gif'
-import Afterburner from '../../assets/Afterburner.gif'
-import Flyby from '../../assets/Flyby.gif'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet'
+import Dawn from '../../assets/Dawn5.gif'
 
 const HomeWrapper = styled.div`
     display: flex;
-    justify-content: center;
     background-color: ${colors.primary};
-    height: 450px;
     align-items: center;
+    height: 60vh;
 `
 
 const HomeContainer = styled.div`
     margin: 70px;
-    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+`
+
+const HomeTitle = styled.div`
+    font-family: 'Raleway', Helvetica, sans-serif;
+    margin: 0;
+    font-size: 50px;
+    line-height: 70px;
+    font-weight: bold;
+    color: white;
+`
+
+const LineTitle = styled.div`
     display: flex;
     flex-direction: row;
 `
 
-const HomeTitle = styled.div`
-    font-family: 'Anton', Helvetica, sans-serif;
-    margin: 0;
-    font-size: 350px;
-    font-weight: bold;
-    background-image: url(${Flyby});
-    background-size: 200%;
-    color: transparent;
-    -moz-background-clip: text;
-	-webkit-background-clip: text;
-    line-height: 200px;
+const Tools = styled.div`
+    margin-top: 20px;
+    font-family: 'Raleway', Helvetica, sans-serif;
+    font-size: 20px;
+    color: grey;
 `
 
-const HomeTitle2 = styled.div`
-    font-family: 'Anton', Helvetica, sans-serif;
-    margin: 0;
-    font-size: 80px;
+const MeLink = styled.div`
+    font-family: 'Raleway', Helvetica, sans-serif;
+    font-size: 50px;
+    color: white;
+    line-height: 70px;
     font-weight: bold;
-    background-image: url(${Afterburner});
-    margin-left: 20px;
-    background-size: contain;
-    color: transparent;
-    -moz-background-clip: text;
-	-webkit-background-clip: text;
-    line-height: 200px;
+    padding-left: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    :hover{
+        background-image: url(${Dawn});
+        background-size: 100%;
+        color: transparent;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+    }
 `
 
 function Home() {
@@ -58,8 +66,13 @@ function Home() {
             </Helmet>
             <HomeWrapper>
                 <HomeContainer>
-                        <HomeTitle>{t("W")}</HomeTitle>
-                        <HomeTitle2>{t("Welcome")}</HomeTitle2>
+                        <HomeTitle>{t("Welcome1")}</HomeTitle>
+                        <LineTitle>
+                            <HomeTitle>{t("Welcome2")}</HomeTitle>
+                            <MeLink href="/about">Arthur</MeLink>
+                        </LineTitle>
+                        <HomeTitle>{t("Welcome3")}</HomeTitle>
+                        <Tools>ReactJs &nbsp;/&nbsp; VueJs &nbsp;/&nbsp; Sass &nbsp;/&nbsp; NodeJs &nbsp;/&nbsp; Express</Tools>
                 </HomeContainer>
             </HomeWrapper>
         </div>

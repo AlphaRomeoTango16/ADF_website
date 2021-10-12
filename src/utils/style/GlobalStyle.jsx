@@ -8,6 +8,9 @@ const StyledGlobalStyle = createGlobalStyle`
         font-family: 'Heiti SC', Helvetica, sans-serif;
     }
     body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
         background-color: ${({ isDarkMode }) =>
         isDarkMode ? 'black' : 'white'};
         margin: 0;
@@ -15,6 +18,11 @@ const StyledGlobalStyle = createGlobalStyle`
         isDarkMode ? 'white' : 'black'};
         transition: color 0.50s linear;
         transition: background-color 0.50s linear;
+    }
+    #root {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
     }
     button {
         color : ${({ isDarkMode }) =>

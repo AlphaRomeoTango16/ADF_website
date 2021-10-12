@@ -9,7 +9,7 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${colors.primary};
-  height: 450px;
+  height: 60vh;
   align-items: center;
 `
 
