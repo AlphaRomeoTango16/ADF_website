@@ -32,12 +32,12 @@ ReactDOM.render(
     <HelmetProvider>
       <Router>
         <ThemeProvider>
-          {/* <LoaderScreen /> */}
           <GlobalStyle />
           <Suspense fallback={<Loader />}>
           <Header />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/home">
+              {/* <LoaderScreen /> */}
               <Home />
             </Route>
             <Route exact path="/projects">

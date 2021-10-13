@@ -6,14 +6,14 @@ const LoaderWrapper = styled.div`
     z-index: 1;
     width: 100%;
     height: 100%;
-    animation: disappear 1s 5s forwards;
+    animation: disappear 1s 3.5s forwards;
     @keyframes disappear {
         0% {
             opacity: 1;
         }
         100% {
-            opacity: 0;
-            display: none;
+            // opacity: 0;
+            // top: -100%;
         }
     }
 `
@@ -61,7 +61,7 @@ const FirstLetter1 = styled.div`
             animation-timing-function:ease-in-out
         }
         100% {
-            transform: translateX(475px);
+            transform: translateX(480px);
             animation-timing-function:ease-in-out
         }
     }
@@ -78,7 +78,7 @@ const FirstLetter2 = styled.div`
             animation-timing-function:ease-in-out
         }
         100% {
-            transform: translateX(90px);
+            transform: translateX(95px);
             animation-timing-function:ease-in-out
         }
     }
@@ -95,7 +95,7 @@ const FirstLetter3 = styled.div`
             animation-timing-function:ease-in-out
         }
         100% {
-            transform: translateX(-195px);
+            transform: translateX(-190px);
             animation-timing-function:ease-in-out
         }
 `
@@ -145,6 +145,7 @@ const StudioName = styled.div`
 `
 
 function LoaderSreen() {
+
     return (
         <LoaderWrapper>
             <LoaderContainer>

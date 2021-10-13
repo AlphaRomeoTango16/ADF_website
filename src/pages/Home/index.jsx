@@ -9,6 +9,12 @@ const HomeWrapper = styled.div`
     background-color: ${colors.primary};
     align-items: center;
     height: 60vh;
+    @media screen and (max-width: 1200px) {
+        height: 50vh;
+      }
+    @media screen and (max-width: 768px) {
+        height: 50vh;
+    }
 `
 
 const HomeContainer = styled.div`
@@ -26,6 +32,12 @@ const HomeTitle = styled.div`
     line-height: 70px;
     font-weight: bold;
     color: white;
+    @media screen and (max-width: 1200px) {
+        font-size: 30px;
+      }
+    @media screen and (max-width: 768px) {
+        font-size: 30px;
+    }
 `
 
 const LineTitle = styled.div`
@@ -50,6 +62,12 @@ const MeLink = styled.div`
     cursor: pointer;
     text-decoration: none;
     transition: all ease-out 2s;
+    @media screen and (max-width: 1200px) {
+        font-size: 30px;
+      }
+    @media screen and (max-width: 768px) {
+        font-size: 30px;
+    }
     :hover{
         background-image: url(${Dawn});
         background-size: 100%;
@@ -57,6 +75,12 @@ const MeLink = styled.div`
         color: transparent;
         -moz-background-clip: text;
         -webkit-background-clip: text;
+        @media screen and (max-width: 1200px) {
+            font-size: 50px;
+          }
+        @media screen and (max-width: 768px) {
+            font-size: 50px;
+        }
     }
 `
 

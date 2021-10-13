@@ -59,9 +59,12 @@ const CardIcon = styled.div`
 `
 
 const Icon = styled.img`
-    width: 20px;
-    height: 20px;
-    padding-right: 10px;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
 `
 
 function card({ image, title, description, icons, link }) {

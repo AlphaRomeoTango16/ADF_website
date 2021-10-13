@@ -17,6 +17,11 @@ const NavContainer = styled.nav`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media screen and (max-width: 1200px) {
+      }
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
 `
 
 const NavLine = styled.nav`
@@ -26,11 +31,10 @@ const NavLine = styled.nav`
     align-item: center;
     justify-content: space-between;
     @media screen and (max-width: 1200px) {
-        background-color: red;
       }
     @media screen and (max-width: 768px) {
-        background-color: pink;
         flex-direction: column;
+        background-color: white;
         justify-content: flex-start;
         width: 20%;
         height: 100%;
@@ -49,7 +53,7 @@ function Header() {
             <Logo />
             {/* <HomeLogo src={theme === 'dark' ? darkLogo : Logo}/> */}
             <NavLine>
-                <StyledLink to="/">{t("Home")}</StyledLink>
+                <StyledLink to="/home">{t("Home")}</StyledLink>
                 <StyledLink to="/projects">{t("Projects")}</StyledLink>
                 <StyledLink to="/about">{t("About")}</StyledLink>
                 <StyledLink to="/contact">{t("Contact")}</StyledLink>

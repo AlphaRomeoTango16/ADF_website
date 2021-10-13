@@ -10,7 +10,7 @@ const ContactWrapper = styled.div`
   justify-content: center;
   background-color: ${colors.primary};
   align-items: center;
-  padding: 50px 0px 50px 0px;
+  height: 60vh;
 `
 
 const ContactContainer = styled.div`

@@ -8,6 +8,13 @@ const Link = styled.a`
 
 const LogoContainer = styled.div`
     width: 200px;
+    @media screen and (max-width: 1200px) {
+        display: flex;
+        justify-content: center;
+      }
+    @media screen and (max-width: 768px) {
+        display: flex;
+        justify-content: center;
 `
 
 const LogoLetter = styled.p`
@@ -32,7 +39,7 @@ function Logo() {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <Link href="/">
+        <Link href="/home">
             <LogoContainer>
                 <LogoLetter isDarkMode={theme === 'dark'}>ADF</LogoLetter>
             </LogoContainer>

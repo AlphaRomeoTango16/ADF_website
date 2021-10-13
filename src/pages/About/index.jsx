@@ -15,7 +15,9 @@ import Malt from '../../assets/Logo_Malt.svg'
 const AboutWrapper = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: ${colors.primary};
+  height: 60vh;
 `
 
 const AboutContainer = styled.div`
