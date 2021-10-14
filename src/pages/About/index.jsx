@@ -33,7 +33,7 @@ justify-content: center;
 @media screen and (max-width: 1200px) {
 
   }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
     flex-direction: column-reverse;
     align-items: center;
     margin: 30px 0px 30px 0px;
@@ -46,7 +46,7 @@ const PictureContainer = styled.img`
     @media screen and (max-width: 1200px) {
         height: 300px;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 375px) {
         width: 30%;
         height: 30%;
         padding-top: 20px;
@@ -60,7 +60,7 @@ const DescriptionContainer = styled.div`
     @media screen and (max-width: 1200px) {
 
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 375px) {
         padding-left: 20px;
         padding-right: 10px;
   }

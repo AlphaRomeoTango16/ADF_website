@@ -21,12 +21,10 @@ const StyledGlobalStyle = createGlobalStyle`
     }
     @media screen and (max-width: 1200px) {
         body {
-          background-color: blue;
         }
       }
     @media screen and (max-width: 768px) {
         body {
-          background-color: olive;
         }
     }
 
@@ -58,6 +56,12 @@ const StyledGlobalStyle = createGlobalStyle`
             background: ${({ isDarkMode }) =>
             isDarkMode ? 'white' : 'black'};
           }
+        @media screen and (max-width: 1200px) {
+        }
+        @media screen and (max-width: 375px) {
+          color: ${({ isDarkMode }) =>
+          isDarkMode ? 'black' : 'white'};
+      }
     }
     select {
         color: ${({ isDarkMode }) =>

@@ -39,7 +39,7 @@ function Logo() {
     const { theme } = useContext(ThemeContext)
 
     return (
-        <Link href="/home">
+        <Link href="/">
             <LogoContainer>
                 <LogoLetter isDarkMode={theme === 'dark'}>ADF</LogoLetter>
             </LogoContainer>

@@ -12,7 +12,7 @@ const HomeWrapper = styled.div`
     @media screen and (max-width: 1200px) {
         height: 50vh;
       }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 375px) {
         height: 50vh;
     }
 `
@@ -33,10 +33,10 @@ const HomeTitle = styled.div`
     font-weight: bold;
     color: white;
     @media screen and (max-width: 1200px) {
-        font-size: 30px;
+        font-size: 20px;
       }
-    @media screen and (max-width: 768px) {
-        font-size: 30px;
+    @media screen and (max-width: 375px) {
+        font-size: 20px;
     }
 `
 
@@ -50,6 +50,12 @@ const Tools = styled.div`
     font-family: 'Raleway', Helvetica, sans-serif;
     font-size: 20px;
     color: grey;
+    @media screen and (max-width: 1200px) {
+        font-size: 10px;
+      }
+    @media screen and (max-width: 375px) {
+        font-size: 10px;
+    }
 `
 
 const MeLink = styled.div`
@@ -63,10 +69,10 @@ const MeLink = styled.div`
     text-decoration: none;
     transition: all ease-out 2s;
     @media screen and (max-width: 1200px) {
-        font-size: 30px;
+        font-size: 20px;
       }
-    @media screen and (max-width: 768px) {
-        font-size: 30px;
+    @media screen and (max-width: 375px) {
+        font-size: 20px;
     }
     :hover{
         background-image: url(${Dawn});
@@ -76,10 +82,10 @@ const MeLink = styled.div`
         -moz-background-clip: text;
         -webkit-background-clip: text;
         @media screen and (max-width: 1200px) {
-            font-size: 50px;
+            font-size: 60px;
           }
-        @media screen and (max-width: 768px) {
-            font-size: 50px;
+        @media screen and (max-width: 375px) {
+            font-size: 60px;
         }
     }
 `

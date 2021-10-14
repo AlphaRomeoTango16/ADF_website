@@ -36,7 +36,7 @@ ReactDOM.render(
           <Suspense fallback={<Loader />}>
           <Header />
           <Switch>
-            <Route exact path="/home">
+            <Route exact path="/">
               {/* <LoaderScreen /> */}
               <Home />
             </Route>

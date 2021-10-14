@@ -16,6 +16,12 @@ export const StyledLink = styled(Link)`
     :hover::after {
         width: 100%;
     }
+    @media screen and (max-width: 1200px) {
+
+      }
+    @media screen and (max-width: 768px) {
+
+    }
 `
 
 export default StyledLink
