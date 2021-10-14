@@ -12,7 +12,7 @@ const HomeWrapper = styled.div`
     @media screen and (max-width: 1200px) {
         height: 50vh;
       }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         height: 50vh;
     }
 `
@@ -35,7 +35,7 @@ const HomeTitle = styled.div`
     @media screen and (max-width: 1200px) {
         font-size: 20px;
       }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         font-size: 20px;
     }
 `
@@ -53,7 +53,7 @@ const Tools = styled.div`
     @media screen and (max-width: 1200px) {
         font-size: 10px;
       }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         font-size: 10px;
     }
 `
@@ -71,7 +71,7 @@ const MeLink = styled.div`
     @media screen and (max-width: 1200px) {
         font-size: 20px;
       }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         font-size: 20px;
     }
     :hover{
@@ -84,7 +84,7 @@ const MeLink = styled.div`
         @media screen and (max-width: 1200px) {
             font-size: 60px;
           }
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 768px) {
             font-size: 60px;
         }
     }

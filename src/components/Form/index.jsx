@@ -12,6 +12,12 @@ const FormContainer = styled.form`
     background-color: ${colors.primary};
     border-radius: 10px;
     margin: 0;
+    @media screen and (max-width: 1200px) {
+        
+    }
+    @media screen and (max-width: 768px) {
+        width: 270px;
+  }
 `
 
 const FormTitle = styled.h2`
@@ -60,7 +66,7 @@ margin: 10px;
 
 }
 @media screen and (max-width: 768px) {
-    width: 77%;
+    width: 80%;
 }
 `
 
@@ -76,7 +82,7 @@ margin: 10px;
 
 }
 @media screen and (max-width: 768px) {
-    width: 77%;
+    width: 80%;
 }
 `
 
@@ -102,7 +108,7 @@ cursor: pointer;
 border: 1px solid white;
 color: white;
 background: transparent;
-z-index: 1;
+z-index: 0;
 overflow: hidden;
 transition: 0.08s ease-in;
 :hover{
@@ -134,13 +140,13 @@ function Form() {
                 <FormTitle>{t("Meet")}</FormTitle>
                 <FirstContainer>
                     <LabelName htmlFor="lname"/>
-                    <InputName type="text" id="lname" name="Nom" placeholder={t("YourName")}/>
+                    <InputName type="text" id="lname" name="Nom" placeholder={t("YourName")} required/>
                     <LabelEmail htmlFor="email"/>
-                    <InputEmail type="text" id="email" name="Email" placeholder={t("YourEmail")}/>
+                    <InputEmail type="text" id="email" name="Email" placeholder={t("YourEmail")} require/>
                 </FirstContainer>
                 <SecondContainer>
                     <LabelText htmlFor="message"/>
-                    <TextArea type="text" id="message" name="Message" placeholder={t("YourMessage")}/>
+                    <TextArea type="text" id="message" name="Message" placeholder={t("YourMessage")} required/>
                 </SecondContainer>
                 <InputButton type="submit" value={t("Send")}>{t("Send")}</InputButton>
             </FormContainer>

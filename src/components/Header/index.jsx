@@ -20,7 +20,7 @@ const NavContainer = styled.nav`
     align-items: center;
     @media screen and (max-width: 1200px) {
       }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 375px) {
         flex-direction: column;
         justify-content: center;
 `
@@ -29,11 +29,12 @@ const NavLine = styled.nav`
     width: 50%;
     display: flex;
     padding: 20px;
+    z-index: 1;
     align-item: center;
     justify-content: space-between;
-    @media screen and (max-width: 1200px) {
-      }
     @media screen and (max-width: 768px) {
+      }
+    @media screen and (max-width: 375px) {
         flex-direction: column;
         background-color: ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
@@ -42,6 +43,7 @@ const NavLine = styled.nav`
         height: 100%;
         left: 0;
         top: 0;
+        bottom: 0;
         position: absolute;
         transition: transform 0.5s ease-in-out;
         transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-100%)"};
@@ -60,9 +62,9 @@ const MobileToggleButton = styled.div`
     position: absolute;
     right: 30px;
     display: none;
-    @media screen and (max-width: 1200px) {
-    }
     @media screen and (max-width: 768px) {
+    }
+    @media screen and (max-width: 375px) {
       display: flex;
   }
 `

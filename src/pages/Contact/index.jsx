@@ -11,6 +11,12 @@ const ContactWrapper = styled.div`
   background-color: ${colors.primary};
   align-items: center;
   height: 60vh;
+  @media screen and (max-width: 1200px) {
+
+  }
+  @media screen and (max-width: 768px) {
+      height: 80vh;
+}
 `
 
 const ContactContainer = styled.div`

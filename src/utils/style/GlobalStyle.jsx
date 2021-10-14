@@ -19,12 +19,14 @@ const StyledGlobalStyle = createGlobalStyle`
         transition: color 0.50s linear;
         transition: background-color 0.50s linear;
     }
-    @media screen and (max-width: 1200px) {
-        body {
-        }
-      }
     @media screen and (max-width: 768px) {
         body {
+            height: 100vh;
+        }
+      }
+    @media screen and (max-width: 375px) {
+        body {
+            height: 100vh;
         }
     }
 

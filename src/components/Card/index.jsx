@@ -19,6 +19,13 @@ const CardWrapper = styled.div`
     box-shadow: 5px 5px 15px 5px #000000;
     cursor: pointer;
     overflow: hidden;
+    @media screen and (max-width: 768px) {
+
+    }
+    @media screen and (max-width: 768px) {
+
+
+  }
 `
 
 const CardVisual = styled.img`

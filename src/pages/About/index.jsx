@@ -18,6 +18,13 @@ const AboutWrapper = styled.div`
   align-items: center;
   background-color: ${colors.primary};
   height: 60vh;
+  @media screen and (max-width: 768px) {
+
+}
+@media screen and (max-width: 375px) {
+    height: 120vh;
+    align-items: start;
+}
 `
 
 const AboutContainer = styled.div`
@@ -35,8 +42,10 @@ justify-content: center;
   }
 @media screen and (max-width: 375px) {
     flex-direction: column-reverse;
+    width: 100%;
     align-items: center;
     margin: 30px 0px 30px 0px;
+    padding: 0px 20px 0px 20px;
 }
 `
 
@@ -47,8 +56,8 @@ const PictureContainer = styled.img`
         height: 300px;
     }
     @media screen and (max-width: 375px) {
-        width: 30%;
-        height: 30%;
+        width: 70%;
+        height: 70%;
         padding-top: 20px;
   }
 `
@@ -61,8 +70,8 @@ const DescriptionContainer = styled.div`
 
     }
     @media screen and (max-width: 375px) {
-        padding-left: 20px;
-        padding-right: 10px;
+        width: 100%;
+        padding: 0;
   }
 `
 
@@ -72,6 +81,12 @@ const AboutTitle = styled.h2`
     font-size: 25px;
     margin: 0px;
     color: ${colors.secondary};
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 19px;
+  }
 `
 
 const AboutText = styled.p`
@@ -88,10 +103,17 @@ const TechnicalTitle = styled.h2`
     font-size: 25px;
     margin: 20px 0px 0px 0px;
     color: ${colors.secondary};
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 19px;
+  }
 `
 
 const LogoContainer = styled.div`
     display: flex;
+    flex-wrap: wrap;
     margin: 10px 0px 0px 0px;
 `
 
@@ -107,6 +129,13 @@ const LogoTool = styled.img`
         background-color: #757575;
         filter: grayscale(100%) blur(1px);
     }
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 375px) {
+        height: 30px;
+        width: 30px;
+  }
 `
 
 const FreelanceTitle = styled.h2`
@@ -115,6 +144,12 @@ const FreelanceTitle = styled.h2`
     font-size: 25px;
     margin: 20px 0px 0px 0px;
     color: ${colors.secondary};
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 375px) {
+        font-size: 19px;
+  }
 `
 
 const FreelanceDescription = styled.p`
@@ -129,6 +164,11 @@ const FreelanceDescription = styled.p`
 const FreelanceImage = styled.img`
     width: 50px;
     padding-left: 5px;
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 375px) {
+  }
 `
 
 function About() {
