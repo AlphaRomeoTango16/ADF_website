@@ -24,7 +24,7 @@ const LogoContainer = styled.div`
     padding-bottom: 20px;
     display: flex;
     justify-content: space-between;
-    width: 70px;
+    width: 100px;
 `
 
 const LabelSwitch = styled.label`
@@ -106,6 +106,7 @@ function Footer() {
             <LogoContainer>
                 <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><FontAwesomeIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn"/></IconMe>
                 <IconMe href="https://github.com/AlphaRomeoTango16"><FontAwesomeIcon icon={['fab', 'github']} style={styleIcon} title="GitHub"/></IconMe>
+                <IconMe href="https://www.malt.fr/profile/ardellafaille"><FontAwesomeIcon icon={['fab', 'malt']} style={styleIcon} title="Malt"/></IconMe>
             </LogoContainer>
             <CopyrightLine>Copyright ©2021 | All rights reserved, Arthur della Faille.</CopyrightLine>
         </FooterContainer>

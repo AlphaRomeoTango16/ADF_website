@@ -12,13 +12,16 @@ import Error from './pages/Error'
 import './i18n'
 import GlobalStyle from './utils/style/GlobalStyle'
 import { ThemeProvider } from './utils/context'
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faMalt } from './assets/myicons/index'
 import { HelmetProvider } from 'react-helmet-async'
 
-library.add(fab, faSun, faMoon)
+library.add(fab, faSun, faMoon, faMalt)
+
+dom.watch();
 
 const Loader = () => (
   <div className="App">

@@ -60,7 +60,7 @@ const StyledGlobalStyle = createGlobalStyle`
           }
         @media screen and (max-width: 1200px) {
         }
-        @media screen and (max-width: 375px) {
+        @media screen and (max-width: 768px) {
           color: ${({ isDarkMode }) =>
           isDarkMode ? 'black' : 'white'};
       }

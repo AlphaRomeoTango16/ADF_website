@@ -39,8 +39,8 @@ const NavLine = styled.nav`
         background-color: ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
         justify-content: flex-start;
-        width: 20%;
-        height: 100%;
+        width: 50%;
+        height: 120%;
         left: 0;
         top: 0;
         bottom: 0;
@@ -62,6 +62,7 @@ const MobileToggleButton = styled.div`
     position: absolute;
     right: 30px;
     display: none;
+    box-shadow: 2px 2px 3px 1px #000000;
     @media screen and (max-width: 768px) {
     }
     @media screen and (max-width: 375px) {
@@ -100,6 +101,7 @@ function Header() {
     const { t } = useTranslation();
     const [sideBar, setSideBar] = useState(true);
     const showSideBar = () => setSideBar(!sideBar)
+    const hideSideBar = () => setSideBar(false)
 
     useEffect(() => {
         const mobile = window.matchMedia("(max-width: 768px)").matches
@@ -107,6 +109,14 @@ function Header() {
             setSideBar(false)
         }
     }, [])
+
+    window.addEventListener('mouseup', function(event){
+        const menu = document.getElementById('NavLine');
+        if (event.target !== menu && event.target.parentNode !== menu){
+            hideSideBar()
+        }
+    })
+
 
     return (
         <NavContainer>

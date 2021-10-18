@@ -2,7 +2,6 @@ import styled, { keyframes } from 'styled-components'
 import colors from '../../utils/style/colors'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
-import Dawn from '../../assets/Dawn5.gif'
 
 const HomeWrapper = styled.div`
     display: flex;
@@ -75,12 +74,12 @@ const MeLink = styled.div`
         font-size: 20px;
     }
     :hover{
-        background-image: url(${Dawn});
         background-size: 100%;
-        font-size: 80px;
-        color: transparent;
-        -moz-background-clip: text;
+        -webkit-text-stroke: 1px white;
+        background: repeating-linear-gradient(45deg, black, black 30px, white 30px, white 60px);
+        background-clip: text;
         -webkit-background-clip: text;
+        color: transparent;
         @media screen and (max-width: 1200px) {
             font-size: 60px;
           }
