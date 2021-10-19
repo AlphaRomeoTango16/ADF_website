@@ -12,7 +12,7 @@ const ContactWrapper = styled.div`
   align-items: center;
   height: 60vh;
   @media screen and (max-width: 1200px) {
-
+    height: 80vh;
   }
   @media screen and (max-width: 768px) {
       height: 80vh;

@@ -17,7 +17,7 @@ const ProjectsWrapper = styled.div`
   background-color: ${colors.primary};
   height: 60vh;
   align-items: center;
-  justify-content: center;
+  justify-content: center;s
 `
 
 const projectList = [

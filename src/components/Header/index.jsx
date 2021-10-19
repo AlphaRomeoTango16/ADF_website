@@ -3,15 +3,9 @@ import { useContext, useState } from 'react'
 import { ThemeContext } from '../../utils/context'
 import { StyledLink } from '../../utils/style/Atoms'
 import LanguageButton from '../LanguageButton'
-// import Logo from '../../assets/Logo.png'
-// import darkLogo from '../../assets/Logo_dark.png'
 import { useTranslation } from 'react-i18next'
 import Logo from '../Logo/index'
 import { useEffect } from 'react/cjs/react.development'
-
-// const HomeLogo = styled.img`
-//     height: 70px;
-// `
 
 const NavContainer = styled.nav`
     padding: 30px;
@@ -19,8 +13,10 @@ const NavContainer = styled.nav`
     justify-content: space-between;
     align-items: center;
     @media screen and (max-width: 1200px) {
+        flex-direction: column;
+        justify-content: center;
       }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         flex-direction: column;
         justify-content: center;
 `
@@ -32,9 +28,21 @@ const NavLine = styled.nav`
     z-index: 1;
     align-item: center;
     justify-content: space-between;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
+        flex-direction: column;
+        background-color: ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
+        justify-content: flex-start;
+        width: 50%;
+        height: 120%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        transition: transform 0.5s ease-in-out;
+        transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-101%)"};
       }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         flex-direction: column;
         background-color: ${({ isDarkMode }) =>
         isDarkMode ? 'white' : 'black'};
@@ -51,49 +59,47 @@ const NavLine = styled.nav`
 `
 
 const MobileToggleButton = styled.div`
-    width: 50px;
-    height: 50px;
-    background-color: ${({ isDarkMode }) =>
-    isDarkMode ? 'white' : 'black'};
-    border-radius: 100%;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    right: 30px;
-    display: none;
-    box-shadow: 2px 2px 3px 1px #000000;
-    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        cursor: pointer;
+        right: 20px;
+        display: none;
+        z-index: 10;
+        padding: 5px;
+        div {
+            position: relative;
+            background-color: ${({ isDarkMode }) =>
+            isDarkMode ? 'white' : 'black'};
+            border-radius: 20px;
+            height: 5px;
+            transition: all 0.3s linear;
+            transform-origin: 1px;
+            :first-child {
+                transform: ${({ isOpen }) =>
+                isOpen ? 'rotate(45deg)' : 'rotate(0deg)'};
+            }
+            :nth-child(2) {
+                opacity: ${({ isOpen }) =>
+                isOpen ? '0' : '1'};
+                transform: ${({ isOpen }) =>
+                isOpen ? 'translateX(20px)' : 'translateX(0px)'};
+            }
+            :nth-child(3) {
+                transform: ${({ isOpen }) =>
+                isOpen ? 'rotate(-45deg)' : 'rotate(0deg)'};
+            }
+        }
     }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 1200px) {
+        display: flex;
+    }
+    @media screen and (max-width: 768px) {
       display: flex;
   }
-`
-
-const Line1 = styled.div`
-    background-color: ${({ isDarkMode }) =>
-    isDarkMode ? 'black' : 'white'};
-    height: 5px;
-    margin-bottom: 5px;
-    margin-left: 7px;
-    margin-right: 7px;
-`
-
-const Line2 = styled.div`
-    background-color: ${({ isDarkMode }) =>
-    isDarkMode ? 'black' : 'white'};
-    height: 5px;
-    margin-bottom: 5px;
-    margin-left: 7px;
-    margin-right: 7px;
-`
-
-const Line3 = styled.div`
-    background-color: ${({ isDarkMode }) =>
-    isDarkMode ? 'black' : 'white'};
-    height: 5px;
-    margin-left: 7px;
-    margin-right: 7px;
 `
 
 function Header() {
@@ -113,7 +119,7 @@ function Header() {
     document.addEventListener('click', function(event){
         const menu = document.getElementById('NavLine');
         if (event.target && event.target !== menu){
-            return showSideBar()
+            return sideBar === false
         }
     })
 
@@ -121,10 +127,10 @@ function Header() {
     return (
         <NavContainer>
             <Logo />
-            <MobileToggleButton isDarkMode={theme === 'dark'} onClick={showSideBar}>
-                <Line1 isDarkMode={theme === 'dark'}/>
-                <Line2 isDarkMode={theme === 'dark'}/>
-                <Line3 isDarkMode={theme === 'dark'}/>
+            <MobileToggleButton isOpen={sideBar === true} isDarkMode={theme === 'dark'} onClick={showSideBar}>
+                <div isDarkMode={theme === 'dark'}/>
+                <div isDarkMode={theme === 'dark'}/>
+                <div isDarkMode={theme === 'dark'}/>
             </MobileToggleButton>
             <NavLine isDarkMode={theme === 'dark'} isOpen={sideBar === true}>
                 <StyledLink to="/">{t("Home")}</StyledLink>

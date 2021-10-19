@@ -19,12 +19,12 @@ const StyledGlobalStyle = createGlobalStyle`
         transition: color 0.50s linear;
         transition: background-color 0.50s linear;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
         body {
             height: 100vh;
         }
       }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         body {
             height: 100vh;
         }
@@ -59,6 +59,8 @@ const StyledGlobalStyle = createGlobalStyle`
             isDarkMode ? 'white' : 'black'};
           }
         @media screen and (max-width: 1200px) {
+            color: ${({ isDarkMode }) =>
+            isDarkMode ? 'black' : 'white'};
         }
         @media screen and (max-width: 768px) {
           color: ${({ isDarkMode }) =>

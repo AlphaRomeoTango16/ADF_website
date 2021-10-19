@@ -9,6 +9,14 @@ const Link = styled.a`
     height: 80%;
     margin: 30px;
     text-decoration: none;
+    @media screen and (max-width: 768px) {
+        width: 100px;
+        height: 50px;
+    }
+    @media screen and (max-width: 768px) {
+        width: 90%;
+        height: 90%;
+  }
 `
 
 const CardWrapper = styled.div`
@@ -20,11 +28,12 @@ const CardWrapper = styled.div`
     cursor: pointer;
     overflow: hidden;
     @media screen and (max-width: 768px) {
-
+        width: 500px;
+        height: 230px;
     }
     @media screen and (max-width: 768px) {
-
-
+        width: 500px;
+        height: 230px;
   }
 `
 
@@ -45,6 +54,15 @@ const CardContainer = styled.div`
     :hover {
         transform: translateY(-85%);
     }
+    @media screen and (max-width: 768px) {
+        bottom: 0%;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        bottom: 0%;
+        }
+  }
+  }
 `
 
 const CardTitle = styled.h2`
@@ -72,6 +90,18 @@ const Icon = styled.img`
     background-color: white;
     padding: 10px;
     border-radius: 10px;
+    @media screen and (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+        border-radius: 10%;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        width: 20px;
+        height: 20px;
+        border-radius: 10%;
+        }
+  }
 `
 
 function card({ image, title, description, icons, link }) {

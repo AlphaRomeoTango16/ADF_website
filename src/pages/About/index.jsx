@@ -17,10 +17,11 @@ const AboutWrapper = styled.div`
   align-items: center;
   background-color: ${colors.primary};
   height: 60vh;
-  @media screen and (max-width: 768px) {
-
+  @media screen and (max-width: 1200px) {
+    height: 105vh;
+    align-items: start;
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 768px) {
     height: 105vh;
     align-items: start;
 }
@@ -37,9 +38,13 @@ font-family: 'Avenir', Helvetica, sans-serif;
 font-weight: bold;
 justify-content: center;
 @media screen and (max-width: 1200px) {
-
+    flex-direction: column-reverse;
+    width: 100%;
+    align-items: center;
+    margin: 30px 0px 30px 0px;
+    padding: 0px 20px 0px 20px;
   }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 768px) {
     flex-direction: column-reverse;
     width: 100%;
     align-items: center;
@@ -52,9 +57,11 @@ const PictureContainer = styled.img`
     height: 300px;
     border-radius: 100%;
     @media screen and (max-width: 1200px) {
-        height: 300px;
+        width: 70%;
+        height: 70%;
+        padding-top: 20px;
     }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         width: 70%;
         height: 70%;
         padding-top: 20px;
@@ -66,9 +73,10 @@ const DescriptionContainer = styled.div`
     flex-direction: column;
     padding-left: 50px;
     @media screen and (max-width: 1200px) {
-
+        width: 100%;
+        padding: 0;
     }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         width: 100%;
         padding: 0;
   }
@@ -81,9 +89,9 @@ const AboutTitle = styled.h2`
     margin: 0px;
     color: ${colors.secondary};
     @media screen and (max-width: 1200px) {
-
+        font-size: 19px;
     }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         font-size: 19px;
   }
 `
@@ -103,9 +111,9 @@ const TechnicalTitle = styled.h2`
     margin: 20px 0px 0px 0px;
     color: ${colors.secondary};
     @media screen and (max-width: 1200px) {
-
+        font-size: 19px;
     }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         font-size: 19px;
   }
 `
@@ -129,9 +137,10 @@ const LogoTool = styled.img`
         filter: grayscale(100%) blur(1px);
     }
     @media screen and (max-width: 1200px) {
-
+        height: 30px;
+        width: 30px;
     }
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 768px) {
         height: 30px;
         width: 30px;
   }

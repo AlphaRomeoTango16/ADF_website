@@ -80,12 +80,6 @@ const MeLink = styled.div`
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
-        @media screen and (max-width: 1200px) {
-            font-size: 60px;
-          }
-        @media screen and (max-width: 768px) {
-            font-size: 60px;
-        }
     }
 `
 

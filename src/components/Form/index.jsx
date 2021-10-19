@@ -13,7 +13,7 @@ const FormContainer = styled.form`
     border-radius: 10px;
     margin: 0;
     @media screen and (max-width: 1200px) {
-        
+        width: 270px;
     }
     @media screen and (max-width: 768px) {
         width: 270px;
@@ -29,7 +29,10 @@ const FormTitle = styled.h2`
     margin-top: 0;
     margin-bottom: 20px;
     @media screen and (max-width: 1200px) {
-        
+        flex-direction: column;
+        padding-left: 0;
+        display: flex;
+        margin: auto;
     }
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -43,7 +46,7 @@ const FirstContainer = styled.div`
     display: flex;
     flex-direction: row;
     @media screen and (max-width: 1200px) {
-
+        flex-direction: column;
     }
     @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -63,7 +66,7 @@ height: 50px;
 padding-left: 20px;
 margin: 10px;
 @media screen and (max-width: 1200px) {
-
+    width: 80%;
 }
 @media screen and (max-width: 768px) {
     width: 80%;
@@ -79,7 +82,7 @@ height: 50px;
 padding-left: 20px;
 margin: 10px;
 @media screen and (max-width: 1200px) {
-
+    width: 80%;
 }
 @media screen and (max-width: 768px) {
     width: 80%;
