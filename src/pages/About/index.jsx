@@ -10,7 +10,6 @@ import JsLogo from '../../assets/logo/javascript.svg'
 import NodeLogo from '../../assets/logo/nodejs.svg'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
-import Malt from '../../assets/Logo_Malt.svg'
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -22,7 +21,7 @@ const AboutWrapper = styled.div`
 
 }
 @media screen and (max-width: 375px) {
-    height: 120vh;
+    height: 105vh;
     align-items: start;
 }
 `
@@ -138,39 +137,6 @@ const LogoTool = styled.img`
   }
 `
 
-const FreelanceTitle = styled.h2`
-    font-family: 'Montserrat', Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 25px;
-    margin: 20px 0px 0px 0px;
-    color: ${colors.secondary};
-    @media screen and (max-width: 1200px) {
-
-    }
-    @media screen and (max-width: 375px) {
-        font-size: 19px;
-  }
-`
-
-const FreelanceDescription = styled.p`
-    display: flex;
-    font-family: 'Montserrat', Helvetica, sans-serif;
-    font-weight: 100;
-    font-size: 15px;
-    margin: 10px 0px 0px 0px;
-    color: ${colors.secondary};
-`
-
-const FreelanceImage = styled.img`
-    width: 50px;
-    padding-left: 5px;
-    @media screen and (max-width: 1200px) {
-
-    }
-    @media screen and (max-width: 375px) {
-  }
-`
-
 function About() {
     const { t } = useTranslation();
 
@@ -195,8 +161,6 @@ function About() {
                         <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><LogoTool src={JsLogo} title="Javascript"/></a>
                         <a href="https://nodejs.org/en/"><LogoTool src={NodeLogo} title="NodeJs"/></a>
                     </LogoContainer>
-                    <FreelanceTitle>{t("FreelanceTitle")}</FreelanceTitle>
-                    <FreelanceDescription>{t("FreelanceDescription")}<a href="https://www.malt.fr/profile/ardellafaille"><FreelanceImage src={Malt} /></a></FreelanceDescription>
                 </DescriptionContainer>
             </AboutContainer>
         </AboutWrapper>

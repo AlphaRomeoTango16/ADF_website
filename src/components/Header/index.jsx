@@ -46,7 +46,7 @@ const NavLine = styled.nav`
         bottom: 0;
         position: absolute;
         transition: transform 0.5s ease-in-out;
-        transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-100%)"};
+        transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-101%)"};
     }
 `
 
@@ -101,7 +101,7 @@ function Header() {
     const { t } = useTranslation();
     const [sideBar, setSideBar] = useState(true);
     const showSideBar = () => setSideBar(!sideBar)
-    const hideSideBar = () => setSideBar(false)
+
 
     useEffect(() => {
         const mobile = window.matchMedia("(max-width: 768px)").matches
@@ -110,10 +110,10 @@ function Header() {
         }
     }, [])
 
-    window.addEventListener('mouseup', function(event){
+    document.addEventListener('click', function(event){
         const menu = document.getElementById('NavLine');
-        if (event.target !== menu && event.target.parentNode !== menu){
-            hideSideBar()
+        if (event.target && event.target !== menu){
+            return showSideBar()
         }
     })
 
