@@ -5,7 +5,6 @@ import { StyledLink } from '../../utils/style/Atoms'
 import LanguageButton from '../LanguageButton'
 import { useTranslation } from 'react-i18next'
 import Logo from '../Logo/index'
-import { useEffect } from 'react/cjs/react.development'
 
 const NavContainer = styled.nav`
     padding: 30px;
@@ -62,14 +61,18 @@ const MobileToggleButton = styled.div`
         flex-direction: column;
         justify-content: space-around;
         position: absolute;
-        width: 50px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 1px solid;
+        border-color: ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
         background-color: transparent;
         cursor: pointer;
         right: 20px;
         display: none;
         z-index: 10;
-        padding: 5px;
+        padding: 10px;
         div {
             position: relative;
             background-color: ${({ isDarkMode }) =>
@@ -80,7 +83,7 @@ const MobileToggleButton = styled.div`
             transform-origin: 1px;
             :first-child {
                 transform: ${({ isOpen }) =>
-                isOpen ? 'rotate(45deg)' : 'rotate(0deg)'};
+                isOpen ? 'rotate(38deg) scaleX(1.2)' : 'rotate(0deg) scaleX(1)'};
             }
             :nth-child(2) {
                 opacity: ${({ isOpen }) =>
@@ -90,7 +93,7 @@ const MobileToggleButton = styled.div`
             }
             :nth-child(3) {
                 transform: ${({ isOpen }) =>
-                isOpen ? 'rotate(-45deg)' : 'rotate(0deg)'};
+                isOpen ? 'rotate(-38deg) scaleX(1.2)' : 'rotate(0deg) scaleX(1)'};
             }
         }
     }
@@ -105,16 +108,9 @@ const MobileToggleButton = styled.div`
 function Header() {
     const { theme } = useContext(ThemeContext)
     const { t } = useTranslation();
-    const [sideBar, setSideBar] = useState(true);
-    const showSideBar = () => setSideBar(!sideBar)
-
-
-    useEffect(() => {
-        const mobile = window.matchMedia("(max-width: 768px)").matches
-        if (mobile) {
-            setSideBar(false)
-        }
-    }, [])
+    const [sideBar, setSideBar] = useState(false);
+    const showSideBar = () => setSideBar(!sideBar);
+    const closeSideBar = () => setSideBar(false);
 
     document.addEventListener('click', function(event){
         const menu = document.getElementById('NavLine');
@@ -133,10 +129,10 @@ function Header() {
                 <div isDarkMode={theme === 'dark'}/>
             </MobileToggleButton>
             <NavLine isDarkMode={theme === 'dark'} isOpen={sideBar === true}>
-                <StyledLink to="/">{t("Home")}</StyledLink>
-                <StyledLink to="/projects">{t("Projects")}</StyledLink>
-                <StyledLink to="/about">{t("About")}</StyledLink>
-                <StyledLink to="/contact">{t("Contact")}</StyledLink>
+                <StyledLink to="/" onClick={closeSideBar}>{t("Home")}</StyledLink>
+                <StyledLink to="/projects" onClick={closeSideBar}>{t("Projects")}</StyledLink>
+                <StyledLink to="/about" onClick={closeSideBar}>{t("About")}</StyledLink>
+                <StyledLink to="/contact" onClick={closeSideBar}>{t("Contact")}</StyledLink>
             </NavLine>
             <LanguageButton />
         </NavContainer>

@@ -17,12 +17,12 @@ const AboutWrapper = styled.div`
   align-items: center;
   background-color: ${colors.primary};
   height: 60vh;
-  @media screen and (max-width: 1200px) {
-    height: 105vh;
+  @media screen and (max-width: 1020px) {
+    height: 100vh;
     align-items: start;
 }
 @media screen and (max-width: 768px) {
-    height: 105vh;
+    height: 100vh;
     align-items: start;
 }
 `
@@ -57,13 +57,13 @@ const PictureContainer = styled.img`
     height: 300px;
     border-radius: 100%;
     @media screen and (max-width: 1200px) {
-        width: 70%;
-        height: 70%;
+        width: 50%;
+        height: 50%;
         padding-top: 20px;
     }
     @media screen and (max-width: 768px) {
-        width: 70%;
-        height: 70%;
+        width: 50%;
+        height: 50%;
         padding-top: 20px;
   }
 `

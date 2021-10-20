@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import Card from '../../components/Card'
-import ProjectPicture1 from '../../assets/Project1.png'
+import Groupomania from '../../assets/Groupomania.gif'
 import VueIcon from '../../assets/logo/vue.svg'
 import HtmlIcon from '../../assets/logo/html.svg'
 import CssIcon from '../../assets/logo/css.svg'
@@ -17,22 +17,23 @@ const ProjectsWrapper = styled.div`
   background-color: ${colors.primary};
   height: 60vh;
   align-items: center;
-  justify-content: center;s
+  justify-content: center;
 `
 
-const projectList = [
-  {
-      "title": "Groupomania",
-      "image": ProjectPicture1,
-      "description": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
-      "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
-      "link": "https://github.com/AlphaRomeoTango16/Groupomania"
-  },
-]
 
 function Projects() {
   const { t } = useTranslation();
   
+  const projectList = [
+    {
+        "title": "Groupomania",
+        "image": Groupomania,
+        "description": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
+        "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
+        "link": "https://github.com/AlphaRomeoTango16/Groupomania"
+    },
+  ]
+
     return (
       <div>
         <Helmet>
@@ -43,7 +44,7 @@ function Projects() {
             <Card
             key={`${project.title}-${index}`}
             title={project.title}
-            description={project.description}
+            description={t("Groupomania")}
             image={project.image}
             icons={project.iconsList}
             link={project.link}

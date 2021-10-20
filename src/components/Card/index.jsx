@@ -7,17 +7,21 @@ import { useTranslation } from 'react-i18next'
 const CardWrapper = styled.div`
     position: relative;
     width: 600px;
-    height: 400px;
+    height: 350px;
     background-color: black;
     box-shadow: 5px 5px 15px 5px #000000;
     overflow: hidden;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
         width: 500px;
         height: 230px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
     @media screen and (max-width: 768px) {
         width: 500px;
         height: 230px;
+        margin-left: 10px;
+        margin-right: 10px;
   }
 `
 
@@ -38,15 +42,12 @@ const CardContainer = styled.div`
     height: 100%;
     transition: transform 2s;
     transform: ${({isOpen}) => isOpen ? "translateY(-85%)" : "translateY(0%)"};
-    @media screen and (max-width: 768px) {
-        bottom: 0%;
+    @media screen and (max-width: 1200px) {
         }
-    }
     @media screen and (max-width: 768px) {
-        bottom: 0%;
+        transform: ${({isOpen}) => isOpen ? "translateY(-75%)" : "translateY(0%)"};
+        bottom: -75%;
         }
-  }
-  }
 `
 
 const CardTitle = styled.h2`
@@ -65,6 +66,12 @@ const CardDescription = styled.p`
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+    @media screen and (max-width: 1200px) {
+
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 10px;
+    }
 `
 
 const CardIcon = styled.div`
@@ -80,7 +87,7 @@ const Icon = styled.img`
     background-color: white;
     padding: 10px;
     border-radius: 10px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1200px) {
         width: 20px;
         height: 20px;
         border-radius: 10%;
@@ -129,11 +136,16 @@ const Link = styled.a`
     :hover:before{
         right: 0;
     }
+    @media screen and (max-width: 1200px) {
+        }
+    @media screen and (max-width: 768px) {
+        font-size: 10px;
+        }
 `
 
 function Card({ image, title, description, icons, link }) {
     const { t } = useTranslation();
-    const [cardContainer, setCardContainer] = useState(true);
+    const [cardContainer, setCardContainer] = useState(false);
     const showCardContainer = () => setCardContainer(!cardContainer)
 
     return (

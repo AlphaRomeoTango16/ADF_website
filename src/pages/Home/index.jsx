@@ -59,13 +59,13 @@ const Tools = styled.div`
 
 const moving = keyframes`
     0% {
-        background-position: 30% 50%;
+        background-position: 0px;
     }
     50% {
-        background-position: 25% 50%;
+        background-position: 60px;
     }
     100% {
-        background-position: 30% 50%;
+        background-position: 0px;
     }
 `
 
@@ -78,14 +78,16 @@ const MeLink = styled.div`
     padding-left: 15px;
     cursor: pointer;
     text-decoration: none;
-    -webkit-text-stroke: 1px white;
     background-size: 400%;
-    background-position: 50% 50%;
-    background: repeating-linear-gradient(45deg, black, black 30px, white 30px, white 60px);
+    background-position: 25% 50%;
+    background: repeating-linear-gradient(45deg, ${colors.primary}, ${colors.primary} 30px, white 30px, white 60px);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: ${moving} 5s ease infinite;
+    animation: ${moving} 10s ease-out infinite;
+    :hover{
+        -webkit-text-stroke: 1px white;
+    }
     @media screen and (max-width: 1200px) {
         font-size: 20px;
       }
