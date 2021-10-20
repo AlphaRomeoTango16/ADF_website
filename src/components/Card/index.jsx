@@ -1,23 +1,8 @@
 import styled from 'styled-components'
 import PropTypes  from 'prop-types'
-
-const Link = styled.a`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 80%;
-    margin: 30px;
-    text-decoration: none;
-    @media screen and (max-width: 768px) {
-        width: 100px;
-        height: 50px;
-    }
-    @media screen and (max-width: 768px) {
-        width: 90%;
-        height: 90%;
-  }
-`
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const CardWrapper = styled.div`
     position: relative;
@@ -25,7 +10,6 @@ const CardWrapper = styled.div`
     height: 400px;
     background-color: black;
     box-shadow: 5px 5px 15px 5px #000000;
-    cursor: pointer;
     overflow: hidden;
     @media screen and (max-width: 768px) {
         width: 500px;
@@ -46,14 +30,14 @@ const CardVisual = styled.img`
 
 const CardContainer = styled.div`
     position: absolute;
+    display: flex;
+    flex-direction: column;
     background-color: RGBA(0,0,0,0.87);
     bottom: -85%;
     width: 100%;
     height: 100%;
     transition: transform 2s;
-    :hover {
-        transform: translateY(-85%);
-    }
+    transform: ${({isOpen}) => isOpen ? "translateY(-85%)" : "translateY(0%)"};
     @media screen and (max-width: 768px) {
         bottom: 0%;
         }
@@ -66,9 +50,15 @@ const CardContainer = styled.div`
 `
 
 const CardTitle = styled.h2`
+    display: flex;
+    justify-content: space-between;
     color: white;
     padding-left: 20px;
     padding-right: 20px;
+`
+
+const ChevronIcon = styled(FontAwesomeIcon)`
+  cursor: pointer;
 `
 
 const CardDescription = styled.p`
@@ -104,24 +94,64 @@ const Icon = styled.img`
   }
 `
 
-function card({ image, title, description, icons, link }) {
+const Link = styled.a`
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 20px;
+    padding: 10px;
+    text-decoration: none;
+    background: black;
+    border: 1px solid white;
+    border-radius: 6px;
+    margin-left: 20px;
+    color: white;
+    padding-right: 10px;
+    align-items: center;
+    z-index: 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.08s ease-in;
+    :hover{
+        color: black;
+    }
+    :before{
+        content: '';
+        position: absolute;
+        background: white;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        right: 100%;
+        z-index: -1;
+        transition: right .3s;
+    }
+    :hover:before{
+        right: 0;
+    }
+`
+
+function Card({ image, title, description, icons, link }) {
+    const { t } = useTranslation();
+    const [cardContainer, setCardContainer] = useState(true);
+    const showCardContainer = () => setCardContainer(!cardContainer)
+
     return (
-        <Link href={link}>
             <CardWrapper>
                 <CardVisual src={image}/>
-                <CardContainer>
-                    <CardTitle>{title}</CardTitle>
+                <CardContainer isOpen={cardContainer === true}>
+                    <CardTitle>{title}<ChevronIcon onClick={showCardContainer}  icon={cardContainer === true ? ['fas', 'chevron-down'] : ['fas', 'chevron-up']}/></CardTitle>
                     <CardDescription>{description}</CardDescription>
                     <CardIcon>{icons.map((icon, index) => 
                         <Icon key={index} src={icon} alt="icon"/>
                     )}</CardIcon>
+                    <Link href={link}>{t("Repository")}</Link>
                 </CardContainer>
             </CardWrapper>
-        </Link>
     )
 }
 
-card.propTypes = {
+Card.propTypes = {
     image : PropTypes.string.isRequired,
     title : PropTypes.string.isRequired,
     description : PropTypes.string.isRequired,
@@ -129,4 +159,4 @@ card.propTypes = {
     link: PropTypes.string.isRequired
 }
 
-export default card
+export default Card

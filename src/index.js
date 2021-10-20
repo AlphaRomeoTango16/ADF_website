@@ -16,10 +16,12 @@ import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faMalt } from './assets/myicons/index'
 import { HelmetProvider } from 'react-helmet-async'
 
-library.add(fab, faSun, faMoon, faMalt)
+library.add(fab, faSun, faMoon, faChevronUp, faChevronDown, faMalt)
 
 dom.watch();
 

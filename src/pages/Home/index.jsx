@@ -57,6 +57,18 @@ const Tools = styled.div`
     }
 `
 
+const moving = keyframes`
+    0% {
+        background-position: 30% 50%;
+    }
+    50% {
+        background-position: 25% 50%;
+    }
+    100% {
+        background-position: 30% 50%;
+    }
+`
+
 const MeLink = styled.div`
     font-family: 'Raleway', Helvetica, sans-serif;
     font-size: 50px;
@@ -66,20 +78,19 @@ const MeLink = styled.div`
     padding-left: 15px;
     cursor: pointer;
     text-decoration: none;
-    transition: all ease-out 2s;
+    -webkit-text-stroke: 1px white;
+    background-size: 400%;
+    background-position: 50% 50%;
+    background: repeating-linear-gradient(45deg, black, black 30px, white 30px, white 60px);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: ${moving} 5s ease infinite;
     @media screen and (max-width: 1200px) {
         font-size: 20px;
       }
     @media screen and (max-width: 768px) {
         font-size: 20px;
-    }
-    :hover{
-        background-size: 100%;
-        -webkit-text-stroke: 1px white;
-        background: repeating-linear-gradient(45deg, black, black 30px, white 30px, white 60px);
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
     }
 `
 
