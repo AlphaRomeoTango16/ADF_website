@@ -8,6 +8,14 @@ import HtmlLogo from '../../assets/logo/html.svg'
 import CssLogo from '../../assets/logo/css.svg'
 import JsLogo from '../../assets/logo/javascript.svg'
 import NodeLogo from '../../assets/logo/nodejs.svg'
+import BootstrapLogo from '../../assets/logo/bootstrap.svg'
+import GitLogo from '../../assets/logo/Git.svg'
+import VSLogo from '../../assets/logo/VSC.svg'
+import MongoDBLogo from '../../assets/logo/mongoDB.svg'
+import MySQLLogo from '../../assets/logo/MySQL.svg'
+import ExpressJsLogo from '../../assets/logo/expressjs.svg'
+import NodemonLogo from '../../assets/logo/nodemon.svg'
+import SequelizeLogo from '../../assets/logo/sequelize.svg'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
 
@@ -169,6 +177,14 @@ function About() {
                         <a href="https://developer.mozilla.org/fr/docs/Web/CSS"><LogoTool src={CssLogo} title="CSS3"/></a>
                         <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><LogoTool src={JsLogo} title="Javascript"/></a>
                         <a href="https://nodejs.org/en/"><LogoTool src={NodeLogo} title="NodeJs"/></a>
+                        <a href="https://getbootstrap.com/"><LogoTool src={BootstrapLogo} title="Bootstrap"/></a>
+                        <a href="https://git-scm.com/"><LogoTool src={GitLogo} title="Git"/></a>
+                        <a href="https://www.mongodb.com/fr-fr"><LogoTool src={MongoDBLogo} title="MongoDB"/></a>
+                        <a href="https://www.mysql.com/fr/"><LogoTool src={MySQLLogo} title="MySQL"/></a>
+                        <a href="https://code.visualstudio.com/"><LogoTool src={VSLogo} title="Visual Studio Code"/></a>
+                        <a href="https://expressjs.com/fr/"><LogoTool src={ExpressJsLogo} title="ExpressJs"/></a>
+                        <a href="https://www.npmjs.com/package/nodemon"><LogoTool src={NodemonLogo} title="Nodemon"/></a>
+                        <a href="https://sequelize.org/"><LogoTool src={SequelizeLogo} title="Sequelize"/></a>
                     </LogoContainer>
                 </DescriptionContainer>
             </AboutContainer>

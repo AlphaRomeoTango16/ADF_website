@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
 const CardWrapper = styled.div`
     position: relative;
     width: 600px;
-    height: 350px;
+    height: 349px;
     background-color: black;
     box-shadow: 5px 5px 15px 5px #000000;
     overflow: hidden;
@@ -18,8 +18,8 @@ const CardWrapper = styled.div`
         margin-right: 10px;
     }
     @media screen and (max-width: 768px) {
-        width: 500px;
-        height: 230px;
+        width: 350px;
+        height: 200px;
         margin-left: 10px;
         margin-right: 10px;
   }
@@ -54,8 +54,17 @@ const CardTitle = styled.h2`
     display: flex;
     justify-content: space-between;
     color: white;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-weight: bold;
     padding-left: 20px;
     padding-right: 20px;
+    margin: 10px 0px 10px 0px;
+    @media screen and (max-width: 1200px) {
+        font-size: 10px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 20px;
+        }
 `
 
 const ChevronIcon = styled(FontAwesomeIcon)`
@@ -64,6 +73,8 @@ const ChevronIcon = styled(FontAwesomeIcon)`
 
 const CardDescription = styled.p`
     color: white;
+    font-size: 13px;
+    font-family: 'Montserrat', Helvetica, sans-serif;
     padding-left: 20px;
     padding-right: 20px;
     @media screen and (max-width: 1200px) {
@@ -103,10 +114,12 @@ const Icon = styled.img`
 
 const Link = styled.a`
     position: absolute;
+    font-size: 13px;
     display: flex;
     flex-direction: row;
     bottom: 20px;
     padding: 10px;
+    font-family: 'Montserrat', Helvetica, sans-serif;
     text-decoration: none;
     background: black;
     border: 1px solid white;

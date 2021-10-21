@@ -62,9 +62,15 @@ const LabelName = styled.label`
 
 const InputName = styled.input`
 width: 50%;
+font-family: 'Montserrat', Helvetica, sans-serif;
 height: 50px;
 padding-left: 20px;
 margin: 10px;
+background: transparent;
+border-top: none;
+border-right: none;
+border-left: none;
+color: white;
 @media screen and (max-width: 1200px) {
     width: 80%;
 }
@@ -77,10 +83,16 @@ const LabelEmail = styled.label`
 `
 
 const InputEmail = styled.input`
+font-family: 'Montserrat', Helvetica, sans-serif;
 width: 50%;
 height: 50px;
 padding-left: 20px;
 margin: 10px;
+background: transparent;
+border-top: none;
+border-right: none;
+border-left: none;
+color: white;
 @media screen and (max-width: 1200px) {
     width: 80%;
 }
@@ -93,6 +105,7 @@ const LabelText = styled.label`
 `
 
 const TextArea = styled.textarea`
+font-family: 'Montserrat', Helvetica, sans-serif;
 width: 100%;
 height: 100px;
 padding-left: 20px;
@@ -105,6 +118,7 @@ display: inline-block;
 margin: 10px;
 position: relative;
 height: 50px;
+font-family: 'Montserrat', Helvetica, sans-serif;
 font-size: 15px;
 font-weight: bold;
 cursor: pointer;

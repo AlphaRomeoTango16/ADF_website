@@ -85,10 +85,30 @@ const InputSwitch = styled.input`
 `
 
 const IconMe = styled.a`
-    transition: all 0.5s;
-    &:hover{
-        transform: translateY(-5px);
-    }
+`
+
+const LinkedInIcon = styled(FontAwesomeIcon)`
+transition: all 0.5s;
+&:hover{
+    transform: translateY(-5px);
+    color: #0B65C2;
+}
+`
+
+const GitHubIcon = styled(FontAwesomeIcon)`
+transition: all 0.5s;
+&:hover{
+    transform: translateY(-5px);
+    color: #6e5494;
+}
+`
+
+const MaltIcon = styled(FontAwesomeIcon)`
+transition: all 0.5s;
+&:hover{
+    transform: translateY(-5px);
+    color: #FC5655;
+}
 `
 
 const styleIcon = { fontSize: "2em", textShadow: "2px 2px 2px #CE5937" }
@@ -104,9 +124,9 @@ function Footer() {
                 <SliderSwitch isDarkMode={theme === 'dark'}  data-fa-icon={theme === 'light' ? "" : ""}></SliderSwitch>
             </LabelSwitch>
             <LogoContainer>
-                <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><FontAwesomeIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn"/></IconMe>
-                <IconMe href="https://github.com/AlphaRomeoTango16"><FontAwesomeIcon icon={['fab', 'github']} style={styleIcon} title="GitHub"/></IconMe>
-                <IconMe href="https://www.malt.fr/profile/ardellafaille"><FontAwesomeIcon icon={['fab', 'malt']} style={styleIcon} title="Malt"/></IconMe>
+                <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><LinkedInIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn"/></IconMe>
+                <IconMe href="https://github.com/AlphaRomeoTango16"><GitHubIcon icon={['fab', 'github']} style={styleIcon} title="GitHub"/></IconMe>
+                <IconMe href="https://www.malt.fr/profile/ardellafaille"><MaltIcon icon={['fab', 'malt']} style={styleIcon} title="Malt"/></IconMe>
             </LogoContainer>
             <CopyrightLine>Copyright ©2021 | All rights reserved, Arthur della Faille.</CopyrightLine>
         </FooterContainer>

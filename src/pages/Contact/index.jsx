@@ -12,7 +12,7 @@ const ContactWrapper = styled.div`
   align-items: center;
   height: 60vh;
   @media screen and (max-width: 1200px) {
-    height: 80vh;
+    height: 50vh;
   }
   @media screen and (max-width: 768px) {
       height: 80vh;
@@ -21,7 +21,7 @@ const ContactWrapper = styled.div`
 
 const ContactContainer = styled.div`
   font-size: 50px;
-  font-family: 'Avenir', Helvetica, sans-serif;
+  font-family: 'Raleway', Helvetica, sans-serif;
   font-weight: bold;
   color: ${colors.secondary};
 `
