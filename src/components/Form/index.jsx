@@ -114,10 +114,6 @@ padding-top: 20px;
 margin: 10px;
 `
 
-const EnvelopeIcon = styled(FontAwesomeIcon)`
-    margin-left: 10px;
-`
-
 const InputButton = styled.button`
 display: inline-block;
 margin: 10px;
@@ -153,6 +149,21 @@ transition: 0.08s ease-in;
 }
 `
 
+const EnvelopeIcon = styled(FontAwesomeIcon)`
+    margin-left: 10px;
+    ${InputButton}:hover & {
+        display: none;
+    }
+`
+
+const EnvelopeCloseIcon = styled(FontAwesomeIcon)`
+    margin-left: 10px;
+    display: none;
+    ${InputButton}:hover & {
+        display: inline-block;
+    }
+`
+
 
 function Form() {
     const { t } = useTranslation();
@@ -171,7 +182,7 @@ function Form() {
                     <LabelText htmlFor="message"/>
                     <TextArea type="text" id="message" name="Message" placeholder={t("YourMessage")} required/>
                 </SecondContainer>
-                <InputButton type="submit" value={t("Send")}>{t("Send")}<EnvelopeIcon icon={['fas', 'envelope-open-text']}/></InputButton>
+                <InputButton type="submit" value={t("Send")}>{t("Send")}<EnvelopeIcon icon={['fas', 'envelope-open-text']} /><EnvelopeCloseIcon icon={['fas', 'envelope']} /></InputButton>
             </FormContainer>
         </FormWrapper>
     )

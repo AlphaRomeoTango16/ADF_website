@@ -18,6 +18,8 @@ import NodemonLogo from '../../assets/logo/nodemon.svg'
 import SequelizeLogo from '../../assets/logo/sequelize.svg'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 
 const AboutWrapper = styled.div`
   display: flex;
@@ -30,8 +32,8 @@ const AboutWrapper = styled.div`
     align-items: start;
 }
 @media screen and (max-width: 768px) {
-    height: 100vh;
     align-items: start;
+    height: 100%;
 }
 `
 
@@ -67,12 +69,12 @@ const PictureContainer = styled.img`
     @media screen and (max-width: 1200px) {
         width: 50%;
         height: 50%;
-        padding-top: 20px;
+        margin-top: 20px;
     }
     @media screen and (max-width: 768px) {
         width: 50%;
         height: 50%;
-        padding-top: 20px;
+        margin-top: 20px;
   }
 `
 
@@ -123,18 +125,105 @@ const TechnicalTitle = styled.h2`
     }
     @media screen and (max-width: 768px) {
         font-size: 19px;
+        margin-bottom: 20px;
   }
 `
 
-const LogoContainer = styled.div`
+const StackWrapper = styled.div`
+  display: flex;
+  @media screen and (max-width: 1200px) {
+    
+}
+@media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 90%;
+}
+`
+
+const StackContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 200px;
+    margin-right: 30px;
+    @media screen and (max-width: 1200px) {
+    
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin-right: 0px;
+        transition: height 2s ease-out;
+        height: ${({isOpen}) => isOpen ? "200px" : "60px"};
+    }
+`
+
+const StackTitle = styled.h3`
+    display: flex;
+    justify-content: space-between;
+    background-color: ${({isOpen}) => isOpen ? "white" : "transparent"};
+    color: ${({isOpen}) => isOpen ? "black" : "white"};
+    border: 1px solid grey;
+    border-bottom: none;
+    padding: 10px;
+    margin-bottom: 0;
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    width: 260px;
+    cursor: pointer;
+    :hover {
+        background: white;
+        color: black;
+    }
+    @media screen and (max-width: 1200px) {
+    
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        margin-top: 0;
+    }
+`
+
+const IconContainer = styled.div`
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    width: 290px;
+    @media screen and (max-width: 1200px) {
+    
+    }
+    @media screen and (max-width: 768px) {
+        width: 125%;
+    }
+`
+
+const StackIcon = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin: 10px 0px 0px 0px;
+    position: absolute;
+    padding: 10px 10px 0px 10px;
+    width: 260px;
+    border: 1px solid grey;
+    height: 120px;
+    border-top: none;
+    transition: transform 1s;
+    transform: ${({isOpen}) => isOpen ? "translateY(0px)" : "translateY(-130px)"};
+    @media screen and (max-width: 1200px) {
+    
+    }
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
+`
+
+const ChevronIcon = styled(FontAwesomeIcon)`
+    transition: transform 1s;
+    transform: ${({isOpen}) => isOpen ? "rotate(0deg)" : "rotate(-180deg)"};
 `
 
 const LogoTool = styled.img`
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     padding: 10px;
     border-radius: 10%;
     margin-right: 10px;
@@ -157,6 +246,16 @@ const LogoTool = styled.img`
 function About() {
     const { t } = useTranslation();
 
+    const [frontIcon, setFrontIcon] = useState(true);
+    const showFrontIcon = () => setFrontIcon(!frontIcon)
+
+    const [backIcon, setBackIcon] = useState(true);
+    const showBackIcon = () => setBackIcon(!backIcon)
+
+    const [toolsIcon, setToolsIcon] = useState(true);
+    const showToolsIcon = () => setToolsIcon(!toolsIcon)
+
+
     return (
         <div>
         <Helmet>
@@ -169,23 +268,44 @@ function About() {
                     <AboutTitle>{t("PresentationTitle")}</AboutTitle>
                     <AboutText>{t("PresentationText")}</AboutText>
                     <TechnicalTitle>{t("TechnicalStack")}</TechnicalTitle>
-                    <LogoContainer>
-                        <a href="https://reactjs.org/"><LogoTool src={ReactLogo} title="ReactJs"/></a>
-                        <a href="https://vuejs.org/"><LogoTool src={VueLogo} title="VueJs"/></a>
-                        <a href="https://sass-lang.com/"><LogoTool src={SassLogo} title="Sass"/></a>
-                        <a href="https://developer.mozilla.org/fr/docs/Web/HTML"><LogoTool src={HtmlLogo} title="HMTL5"/></a>
-                        <a href="https://developer.mozilla.org/fr/docs/Web/CSS"><LogoTool src={CssLogo} title="CSS3"/></a>
-                        <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><LogoTool src={JsLogo} title="Javascript"/></a>
-                        <a href="https://nodejs.org/en/"><LogoTool src={NodeLogo} title="NodeJs"/></a>
-                        <a href="https://getbootstrap.com/"><LogoTool src={BootstrapLogo} title="Bootstrap"/></a>
-                        <a href="https://git-scm.com/"><LogoTool src={GitLogo} title="Git"/></a>
-                        <a href="https://www.mongodb.com/fr-fr"><LogoTool src={MongoDBLogo} title="MongoDB"/></a>
-                        <a href="https://www.mysql.com/fr/"><LogoTool src={MySQLLogo} title="MySQL"/></a>
-                        <a href="https://code.visualstudio.com/"><LogoTool src={VSLogo} title="Visual Studio Code"/></a>
-                        <a href="https://expressjs.com/fr/"><LogoTool src={ExpressJsLogo} title="ExpressJs"/></a>
-                        <a href="https://www.npmjs.com/package/nodemon"><LogoTool src={NodemonLogo} title="Nodemon"/></a>
-                        <a href="https://sequelize.org/"><LogoTool src={SequelizeLogo} title="Sequelize"/></a>
-                    </LogoContainer>
+                        <StackWrapper>
+                            <StackContainer isOpen={frontIcon === true}>
+                                <StackTitle onClick={showFrontIcon} isOpen={frontIcon === true}>Frontend<ChevronIcon isOpen={frontIcon === true} icon={['fas', 'chevron-up']}/></StackTitle>
+                                <IconContainer>
+                                    <StackIcon isOpen={frontIcon === true}>
+                                        <a href="https://developer.mozilla.org/fr/docs/Web/HTML"><LogoTool src={HtmlLogo} title="HMTL5"/></a>
+                                        <a href="https://developer.mozilla.org/fr/docs/Web/CSS"><LogoTool src={CssLogo} title="CSS3"/></a>
+                                        <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript"><LogoTool src={JsLogo} title="Javascript"/></a>
+                                        <a href="https://reactjs.org/"><LogoTool src={ReactLogo} title="ReactJs"/></a>
+                                        <a href="https://vuejs.org/"><LogoTool src={VueLogo} title="VueJs"/></a>
+                                        <a href="https://sass-lang.com/"><LogoTool src={SassLogo} title="Sass"/></a>
+                                        <a href="https://getbootstrap.com/"><LogoTool src={BootstrapLogo} title="Bootstrap"/></a>
+                                    </StackIcon>
+                                </IconContainer>
+                            </StackContainer>
+                            <StackContainer isOpen={backIcon === true}>
+                                <StackTitle onClick={showBackIcon} isOpen={backIcon === true}>Backend<ChevronIcon isOpen={backIcon === true} icon={['fas', 'chevron-up']}/></StackTitle>
+                                <IconContainer>
+                                    <StackIcon isOpen={backIcon === true}>
+                                        <a href="https://nodejs.org/en/"><LogoTool src={NodeLogo} title="NodeJs"/></a>
+                                        <a href="https://expressjs.com/fr/"><LogoTool src={ExpressJsLogo} title="ExpressJs"/></a>
+                                        <a href="https://www.npmjs.com/package/nodemon"><LogoTool src={NodemonLogo} title="Nodemon"/></a>
+                                        <a href="https://sequelize.org/"><LogoTool src={SequelizeLogo} title="Sequelize"/></a>
+                                        <a href="https://www.mongodb.com/fr-fr"><LogoTool src={MongoDBLogo} title="MongoDB"/></a>
+                                        <a href="https://www.mysql.com/fr/"><LogoTool src={MySQLLogo} title="MySQL"/></a>
+                                    </StackIcon>
+                                </IconContainer>
+                                </StackContainer>
+                            <StackContainer isOpen={toolsIcon === true}>
+                                <StackTitle onClick={showToolsIcon} isOpen={toolsIcon === true}>{t("Tools")}<ChevronIcon isOpen={toolsIcon === true} icon={['fas', 'chevron-up']}/></StackTitle>
+                                <IconContainer>
+                                    <StackIcon isOpen={toolsIcon === true}>
+                                        <a href="https://git-scm.com/"><LogoTool src={GitLogo} title="Git"/></a>
+                                        <a href="https://code.visualstudio.com/"><LogoTool src={VSLogo} title="Visual Studio Code"/></a>
+                                    </StackIcon>
+                                </IconContainer>
+                            </StackContainer>
+                        </StackWrapper>
                 </DescriptionContainer>
             </AboutContainer>
         </AboutWrapper>
