@@ -20,10 +20,12 @@ import { faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faMalt } from './assets/myicons/index'
 import { HelmetProvider } from 'react-helmet-async'
 
-library.add(fab, faSun, faMoon, faChevronUp, faChevronDown, faMalt, faChevronCircleLeft, faChevronCircleRight)
+library.add(fab, faSun, faMoon, faChevronUp, faChevronDown, faMalt, faChevronCircleLeft, faChevronCircleRight, faEnvelopeOpenText, faEnvelope)
 
 dom.watch();
 
