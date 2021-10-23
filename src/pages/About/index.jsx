@@ -27,7 +27,7 @@ const AboutWrapper = styled.div`
   align-items: center;
   background-color: ${colors.primary};
   height: 60vh;
-  @media screen and (max-width: 1020px) {
+  @media screen and (max-width: 1200px) {
     height: 100vh;
     align-items: start;
 }
@@ -132,6 +132,8 @@ const TechnicalTitle = styled.h2`
 const StackWrapper = styled.div`
   display: flex;
   @media screen and (max-width: 1200px) {
+    flex-direction: column;
+    width: 90%;
     
 }
 @media screen and (max-width: 768px) {
@@ -147,7 +149,10 @@ const StackContainer = styled.div`
     height: 200px;
     margin-right: 30px;
     @media screen and (max-width: 1200px) {
-    
+        width: 100%;
+        margin-right: 0px;
+        transition: height 2s ease-out;
+        height: ${({isOpen}) => isOpen ? "200px" : "60px"};
     }
     @media screen and (max-width: 768px) {
         width: 100%;
@@ -176,7 +181,8 @@ const StackTitle = styled.h3`
         color: black;
     }
     @media screen and (max-width: 1200px) {
-    
+        width: 100%;
+        margin-top: 0;
     }
     @media screen and (max-width: 768px) {
         width: 100%;
@@ -190,7 +196,7 @@ const IconContainer = styled.div`
     height: 200px;
     width: 290px;
     @media screen and (max-width: 1200px) {
-    
+        width: 125%;
     }
     @media screen and (max-width: 768px) {
         width: 125%;
@@ -209,7 +215,7 @@ const StackIcon = styled.div`
     transition: transform 1s;
     transform: ${({isOpen}) => isOpen ? "translateY(0px)" : "translateY(-130px)"};
     @media screen and (max-width: 1200px) {
-    
+        width: 80%;
     }
     @media screen and (max-width: 768px) {
         width: 80%;

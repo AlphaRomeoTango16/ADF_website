@@ -33,10 +33,11 @@ const NavLine = styled.nav`
         isDarkMode ? 'white' : 'black'};
         justify-content: flex-start;
         width: 50%;
+        height: 100%;
         top: 0;
         left: 0;
         bottom: 0;
-        position: absolute;
+        position: fixed;
         transition: transform 0.5s ease-in-out;
         transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-161%)"};
       }
@@ -50,7 +51,7 @@ const NavLine = styled.nav`
         left: 0;
         top: 0;
         bottom: 0;
-        position: absolute;
+        position: fixed;
         transition: transform 0.5s ease-in-out;
         transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-101%)"};
     }
@@ -82,7 +83,7 @@ const MobileToggleButton = styled.div`
             transform-origin: 1px;
             :first-child {
                 transform: ${({ isOpen }) =>
-                isOpen ? 'rotate(38deg) scaleX(1.2)' : 'rotate(0deg) scaleX(1)'};
+                isOpen ? 'rotate(45deg) translateX(3.5px) translateY(-3px)' : 'rotate(0deg)'};
             }
             :nth-child(2) {
                 opacity: ${({ isOpen }) =>
@@ -92,7 +93,7 @@ const MobileToggleButton = styled.div`
             }
             :nth-child(3) {
                 transform: ${({ isOpen }) =>
-                isOpen ? 'rotate(-38deg) scaleX(1.2)' : 'rotate(0deg) scaleX(1)'};
+                isOpen ? 'rotate(-45deg) translateX(3.5px) translateY(3px)' : 'rotate(0deg)'};
             }
         }
     }
