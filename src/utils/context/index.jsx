@@ -8,7 +8,6 @@ export const ThemeProvider = ({ children }) => {
         setTheme(theme === 'light' ? 'dark' : 'light')
     }
 
-
     return (
         <ThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}
