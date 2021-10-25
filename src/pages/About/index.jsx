@@ -28,7 +28,7 @@ const AboutWrapper = styled.div`
   background-color: ${colors.primary};
   height: 60vh;
   @media screen and (max-width: 1200px) {
-    height: 100vh;
+    height: 100%;
     align-items: start;
 }
 @media screen and (max-width: 768px) {
@@ -48,9 +48,8 @@ font-family: 'Avenir', Helvetica, sans-serif;
 font-weight: bold;
 justify-content: center;
 @media screen and (max-width: 1200px) {
-    flex-direction: column-reverse;
+    flex-direction: row;
     width: 100%;
-    align-items: center;
     margin: 30px 0px 30px 0px;
     padding: 0px 20px 0px 20px;
   }
@@ -67,13 +66,13 @@ const PictureContainer = styled.img`
     height: 300px;
     border-radius: 100%;
     @media screen and (max-width: 1200px) {
-        width: 50%;
-        height: 50%;
-        margin-top: 20px;
+        width: 350px;
+        height: 350px;
+        margin-right: 20px;
     }
     @media screen and (max-width: 768px) {
-        width: 50%;
-        height: 50%;
+        width: 150px;
+        height: 150px;
         margin-top: 20px;
   }
 `
@@ -122,6 +121,7 @@ const TechnicalTitle = styled.h2`
     color: ${colors.secondary};
     @media screen and (max-width: 1200px) {
         font-size: 19px;
+        margin-bottom: 20px;
     }
     @media screen and (max-width: 768px) {
         font-size: 19px;
@@ -133,12 +133,12 @@ const StackWrapper = styled.div`
   display: flex;
   @media screen and (max-width: 1200px) {
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     
 }
 @media screen and (max-width: 768px) {
     flex-direction: column;
-    width: 90%;
+    width: 100%;
 }
 `
 
@@ -151,13 +151,13 @@ const StackContainer = styled.div`
     @media screen and (max-width: 1200px) {
         width: 100%;
         margin-right: 0px;
-        transition: height 2s ease-out;
-        height: ${({isOpen}) => isOpen ? "200px" : "60px"};
+        transition: height 1s ease-out;
+        height: ${({isOpen}) => isOpen ? "150px" : "60px"};
     }
     @media screen and (max-width: 768px) {
         width: 100%;
         margin-right: 0px;
-        transition: height 2s ease-out;
+        transition: height 1s ease-out;
         height: ${({isOpen}) => isOpen ? "200px" : "60px"};
     }
 `
@@ -181,11 +181,11 @@ const StackTitle = styled.h3`
         color: black;
     }
     @media screen and (max-width: 1200px) {
-        width: 100%;
+        width: 93%;
         margin-top: 0;
     }
     @media screen and (max-width: 768px) {
-        width: 100%;
+        width: 93%;
         margin-top: 0;
     }
 `
@@ -196,10 +196,12 @@ const IconContainer = styled.div`
     height: 200px;
     width: 290px;
     @media screen and (max-width: 1200px) {
-        width: 125%;
+        width: 100%;
+        height: 75px;
     }
     @media screen and (max-width: 768px) {
-        width: 125%;
+        width: 100%;
+        height: 200px;
     }
 `
 
@@ -215,10 +217,14 @@ const StackIcon = styled.div`
     transition: transform 1s;
     transform: ${({isOpen}) => isOpen ? "translateY(0px)" : "translateY(-130px)"};
     @media screen and (max-width: 1200px) {
-        width: 80%;
+        width: 93%;
+        height: 50px;
+        padding: 10px 10px 10px 10px;
+        transform: ${({isOpen}) => isOpen ? "translateY(0px)" : "translateY(-70px)"};
     }
     @media screen and (max-width: 768px) {
-        width: 80%;
+        width: 93%;
+        height: 120px;
     }
 `
 
