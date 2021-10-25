@@ -74,6 +74,7 @@ const PictureContainer = styled.img`
         width: 150px;
         height: 150px;
         margin-top: 20px;
+        margin-right: 0px;
   }
 `
 
