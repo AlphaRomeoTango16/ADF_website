@@ -119,7 +119,7 @@ const hello = keyframes`
 `
 
 const HandIcon = styled.div`
-    width: 100px;
+    width: 50px;
     margin: 0;
     cursor: pointer;
     :hover{
