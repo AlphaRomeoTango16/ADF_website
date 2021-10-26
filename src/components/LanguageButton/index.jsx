@@ -11,7 +11,7 @@ const SelectButton = styled.div`
       }
     @media screen and (max-width: 768px) {
         justify-content: center;
-        width: 110px;
+        width: 130px;
     }
 `
 const ButtonFr = styled.button`
