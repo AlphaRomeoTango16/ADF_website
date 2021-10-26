@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const SelectButton = styled.div`
     display: flex;
-    justify-content: flex-end;
+    margin: auto;
     font-size: 15px;
     width: 200px;
     @media screen and (max-width: 1200px) {
