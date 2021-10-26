@@ -152,13 +152,13 @@ const StackContainer = styled.div`
     @media screen and (max-width: 1200px) {
         width: 100%;
         margin-right: 0px;
-        transition: height 1s ease-out;
+        transition: height 1s;
         height: ${({isOpen}) => isOpen ? "150px" : "60px"};
     }
     @media screen and (max-width: 768px) {
         width: 100%;
         margin-right: 0px;
-        transition: height 1s ease-out;
+        transition: height 1s;
         height: ${({isOpen}) => isOpen ? "200px" : "60px"};
     }
 `

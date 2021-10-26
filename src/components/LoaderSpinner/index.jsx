@@ -14,6 +14,7 @@ const LoaderContainer = styled.div`
 
 const LoaderIcon = styled(FontAwesomeIcon)`
     color: black;
+    position: fixed;
     font-size: 500%;
     animation: rotate 2s infinite linear;
     @keyframes rotate {

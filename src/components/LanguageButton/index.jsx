@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import { useTranslation } from 'react-i18next';
 
 const SelectButton = styled.div`
-    margin: auto;
-    text-align: center;
+    display: flex;
+    justify-content: flex-end;
     font-size: 15px;
     width: 200px;
     @media screen and (max-width: 1200px) {
