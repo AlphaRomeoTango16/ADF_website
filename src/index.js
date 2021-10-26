@@ -36,16 +36,13 @@ dom.watch();
 
 const Loader = () => (
   <LoaderSpinner />
-  // <div className="App">
-  //   <img className="App-logo" alt="logo" />
-  //   <div>loading...</div>
-  // </div>
 );
 
 ReactDOM.render(
   <React.StrictMode>
     <HelmetProvider>
       <Router>
+        {/* <LoaderScreen /> */}
         <ThemeProvider>
           <GlobalStyle />
           <Suspense fallback={<Loader />}>

@@ -2,18 +2,19 @@ import styled from 'styled-components'
 
 const LoaderWrapper = styled.div`
     background-color: white;
-    position: absolute;
-    z-index: 1;
+    position: fixed;
+    z-index: 20;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     animation: disappear 1s 3.5s forwards;
     @keyframes disappear {
         0% {
             opacity: 1;
         }
         100% {
-            // opacity: 0;
-            // top: -100%;
+            opacity: 0;
+            z-index: -20;
+            top: -100%;
         }
     }
 `
@@ -115,35 +116,6 @@ const RestName = styled.div`
         }
 `
 
-const Studio = styled.div`
-    display: flex;
-    width: 100%;
-    justify-content: center;
-`
-
-const StudioName = styled.div`
-    display: flex;
-    font-size: 60px;
-    font-family: 'Anton', Helvetica, sans-serif;
-    justify-content: center;
-    letter-spacing: -2px;
-    color: white;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    animation: studio 1s linear 2s forwards;
-    opacity: 0;
-    @keyframes studio {
-        0% {
-            width: 0;
-        }
-        100% {
-            opacity: 1;
-            width: 10%;
-            text-shadow: 10px 0px 10px black;
-        }
-    }
-`
-
 function LoaderSreen() {
 
     return (
@@ -163,11 +135,6 @@ function LoaderSreen() {
                         <RestName>AILLE</RestName>
                     </LastName2>
                 </NameContainer>
-                <Studio>
-                    <StudioName>
-                        STUDIO
-                    </StudioName>
-                </Studio>
             </LoaderContainer>
         </LoaderWrapper>
     )
