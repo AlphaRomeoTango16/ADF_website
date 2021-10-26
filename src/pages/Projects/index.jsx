@@ -20,11 +20,10 @@ const ProjectsWrapper = styled.div`
   height: 60vh;
   align-items: center;
   @media screen and (max-width: 1200px) {
+    flex-direction: column;
   }
   @media screen and (max-width: 768px) {
     flex-direction: column;
-    justify-content: flex-start;
-    height: 50vh;
   }
 `
 
@@ -37,13 +36,14 @@ const SliderLeft = styled(FontAwesomeIcon)`
     color: white;
   }
   @media screen and (max-width: 1200px) {
+    font-size: 35px;
+    margin-bottom: 30px;
+    margin-right: 0;
   }
   @media screen and (max-width: 768px) {
     font-size: 35px;
+    margin-bottom: 30px;
     margin-right: 0;
-    position: relative;
-    bottom: -265px;
-    left: -50px;
   }
 `
 
@@ -56,13 +56,14 @@ const SliderRight = styled(FontAwesomeIcon)`
     color: white;
   }
   @media screen and (max-width: 1200px) {
+    font-size: 35px;
+    margin-top: 30px;
+    margin-left: 0;
   }
   @media screen and (max-width: 768px) {
     font-size: 35px;
+    margin-top: 30px;
     margin-left: 0;
-    position: relative;
-    bottom: -30px;
-    left: 50px;
   }
 `
 
