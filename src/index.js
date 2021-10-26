@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
-// import LoaderScreen from './components/LoaderScreen'
+import LoaderScreen from './components/LoaderScreen'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './pages/Error'
@@ -33,10 +33,11 @@ library.add(fab, faSun, faMoon, faChevronUp, faChevronDown, faMalt, faChevronCir
 dom.watch();
 
 const Loader = () => (
-  <div className="App">
-    <img className="App-logo" alt="logo" />
-    <div>loading...</div>
-  </div>
+  <LoaderScreen />
+  // <div className="App">
+  //   <img className="App-logo" alt="logo" />
+  //   <div>loading...</div>
+  // </div>
 );
 
 ReactDOM.render(
@@ -49,7 +50,6 @@ ReactDOM.render(
           <Header />
           <Switch>
             <Route exact path="/">
-              {/* <LoaderScreen /> */}
               <Home />
             </Route>
             <Route exact path="/projects">

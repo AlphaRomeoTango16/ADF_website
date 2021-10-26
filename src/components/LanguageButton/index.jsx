@@ -11,19 +11,19 @@ const SelectButton = styled.div`
       }
     @media screen and (max-width: 768px) {
         justify-content: center;
-        width: 150px;
+        width: 110px;
     }
 `
 const ButtonFr = styled.button`
     border-radius: 10px 0px 0px 10px;
-    border-width: 1px;
+    border-width: 2px 1px 2px 2px;
     border-style: solid;
     cursor: pointer;
 `
 
 const ButtonEn = styled.button`
     border-radius: 0px 10px 10px 0px;
-    border-width: 1px;
+    border-width: 2px 2px 2px 1px;
     border-style: solid;
     cursor: pointer;
 `
