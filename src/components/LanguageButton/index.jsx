@@ -7,8 +7,10 @@ const SelectButton = styled.div`
     font-size: 15px;
     width: 200px;
     @media screen and (max-width: 1200px) {
+        justify-content: center;
       }
     @media screen and (max-width: 768px) {
+        justify-content: center;
         width: 130px;
     }
 `
