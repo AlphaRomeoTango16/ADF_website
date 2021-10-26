@@ -2,28 +2,26 @@ import styled from 'styled-components'
 import { useTranslation } from 'react-i18next';
 
 const SelectButton = styled.div`
-    display: flex;
     margin: auto;
+    text-align: center;
     font-size: 15px;
     width: 200px;
     @media screen and (max-width: 1200px) {
-        justify-content: center;
       }
     @media screen and (max-width: 768px) {
-        justify-content: center;
         width: 130px;
     }
 `
 const ButtonFr = styled.button`
     border-radius: 10px 0px 0px 10px;
-    border-width: 1px 0px 1px 1px;
+    border-width: 1px;
     border-style: solid;
     cursor: pointer;
 `
 
 const ButtonEn = styled.button`
     border-radius: 0px 10px 10px 0px;
-    border-width: 1px 1px 1px 1px;
+    border-width: 1px;
     border-style: solid;
     cursor: pointer;
 `
