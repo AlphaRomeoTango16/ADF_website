@@ -221,7 +221,7 @@ const StackIcon = styled.div`
         width: 93%;
         height: 50px;
         padding: 10px 10px 10px 10px;
-        transform: ${({isOpen}) => isOpen ? "translateY(0px)" : "translateY(-70px)"};
+        transform: ${({isOpen}) => isOpen ? "translateY(0px)" : "translateY(-140px)"};
     }
     @media screen and (max-width: 768px) {
         width: 93%;

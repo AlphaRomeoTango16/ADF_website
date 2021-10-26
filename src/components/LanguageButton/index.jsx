@@ -16,14 +16,14 @@ const SelectButton = styled.div`
 `
 const ButtonFr = styled.button`
     border-radius: 10px 0px 0px 10px;
-    border-width: 2px 1px 2px 2px;
+    border-width: 1px 0px 1px 1px;
     border-style: solid;
     cursor: pointer;
 `
 
 const ButtonEn = styled.button`
     border-radius: 0px 10px 10px 0px;
-    border-width: 2px 2px 2px 1px;
+    border-width: 1px 1px 1px 1px;
     border-style: solid;
     cursor: pointer;
 `

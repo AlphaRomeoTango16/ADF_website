@@ -5,7 +5,8 @@ import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import LoaderScreen from './components/LoaderScreen'
+// import LoaderScreen from './components/LoaderScreen'
+import LoaderSpinner from './components/LoaderSpinner'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Error from './pages/Error'
@@ -25,15 +26,16 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 import { faFolder } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faSync } from '@fortawesome/free-solid-svg-icons'
 import { faMalt } from './assets/myicons/index'
 import { HelmetProvider } from 'react-helmet-async'
 
-library.add(fab, faSun, faMoon, faChevronUp, faChevronDown, faMalt, faChevronCircleLeft, faChevronCircleRight, faEnvelopeOpenText, faEnvelope, faHome, faFolder, faUser)
+library.add(fab, faSun, faMoon, faChevronUp, faChevronDown, faMalt, faChevronCircleLeft, faChevronCircleRight, faEnvelopeOpenText, faEnvelope, faHome, faFolder, faUser, faSync)
 
 dom.watch();
 
 const Loader = () => (
-  <LoaderScreen />
+  <LoaderSpinner />
   // <div className="App">
   //   <img className="App-logo" alt="logo" />
   //   <div>loading...</div>
