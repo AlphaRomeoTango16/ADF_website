@@ -108,7 +108,8 @@ const MobileToggleButton = styled.div`
 
 const NavIcon = styled(FontAwesomeIcon)`
   display: none;
-  color: white;
+  color: ${({ isDarkMode }) =>
+  isDarkMode ? 'black' : 'white'};
   padding-right: 15px;
   @media screen and (max-width: 1200px) {
     display: inline-block;
@@ -157,10 +158,10 @@ function Header() {
                 <div isDarkMode={theme === 'dark'}/>
             </MobileToggleButton>
             <NavLine isDarkMode={theme === 'dark'} isOpen={sideBar === true}>
-                <StyledLink to="/" onClick={closeSideBar}><NavIcon icon={['fas', 'home']}/>{t("Home")}</StyledLink>
-                <StyledLink to="/projects" onClick={closeSideBar}><NavIcon icon={['fas', 'folder']}/>{t("Projects")}</StyledLink>
-                <StyledLink to="/about" onClick={closeSideBar}><NavIcon icon={['fas', 'user']}/>{t("About")}</StyledLink>
-                <StyledLink to="/contact" onClick={closeSideBar}><NavIcon icon={['fas', 'envelope']}/>{t("Contact")}</StyledLink>
+                <StyledLink to="/" onClick={closeSideBar}><NavIcon icon={['fas', 'home']} isDarkMode={theme === 'dark'}/>{t("Home")}</StyledLink>
+                <StyledLink to="/projects" onClick={closeSideBar}><NavIcon icon={['fas', 'folder']} isDarkMode={theme === 'dark'}/>{t("Projects")}</StyledLink>
+                <StyledLink to="/about" onClick={closeSideBar}><NavIcon icon={['fas', 'user']} isDarkMode={theme === 'dark'}/>{t("About")}</StyledLink>
+                <StyledLink to="/contact" onClick={closeSideBar}><NavIcon icon={['fas', 'envelope']} isDarkMode={theme === 'dark'}/>{t("Contact")}</StyledLink>
             </NavLine>
             <LanguageButton />
         </NavContainer>

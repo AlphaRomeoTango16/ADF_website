@@ -11,6 +11,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -78,6 +79,13 @@ function Projects() {
         "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
         "link": "https://github.com/AlphaRomeoTango16/Groupomania"
     },
+    {
+      "title": "Black Jack",
+      "image": Groupomania,
+      "description": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
+      "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
+      "link": "https://github.com/AlphaRomeoTango16/Groupomania"
+  },
   ]
 
   const [current, setCurrent] = useState(0);
@@ -98,8 +106,10 @@ function Projects() {
         </Helmet>
         <ProjectsWrapper>
           <SliderLeft icon={['fas', 'chevron-circle-left']} onClick={prevSlide}/>
+          <Swiper>
           {projectList.map((project, index) => {
             return (
+              <SwiperSlide key={index}>
               <div key={index}>
                 {index === current && (
                   <Card
@@ -112,8 +122,10 @@ function Projects() {
                   />
                 )}
               </div>
+              </SwiperSlide>
             )
           })}
+          </Swiper>
           <SliderRight icon={['fas', 'chevron-circle-right']} onClick={nextSlide}/>
         </ProjectsWrapper>
       </div>
