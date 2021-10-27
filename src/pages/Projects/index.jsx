@@ -11,7 +11,7 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Swiper, SwiperSlide } from 'swiper/react'
+
 
 const ProjectsWrapper = styled.div`
   display: flex;
@@ -68,6 +68,8 @@ const SliderRight = styled(FontAwesomeIcon)`
   }
 `
 
+
+
 function Projects() {
   const { t } = useTranslation();
   
@@ -106,10 +108,8 @@ function Projects() {
         </Helmet>
         <ProjectsWrapper>
           <SliderLeft icon={['fas', 'chevron-circle-left']} onClick={prevSlide}/>
-          <Swiper>
           {projectList.map((project, index) => {
             return (
-              <SwiperSlide key={index}>
               <div key={index}>
                 {index === current && (
                   <Card
@@ -122,10 +122,8 @@ function Projects() {
                   />
                 )}
               </div>
-              </SwiperSlide>
             )
           })}
-          </Swiper>
           <SliderRight icon={['fas', 'chevron-circle-right']} onClick={nextSlide}/>
         </ProjectsWrapper>
       </div>
