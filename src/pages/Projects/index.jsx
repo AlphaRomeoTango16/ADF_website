@@ -12,7 +12,6 @@ import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
 const ProjectsWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -68,8 +67,6 @@ const SliderRight = styled(FontAwesomeIcon)`
   }
 `
 
-
-
 function Projects() {
   const { t } = useTranslation();
   
@@ -81,13 +78,6 @@ function Projects() {
         "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
         "link": "https://github.com/AlphaRomeoTango16/Groupomania"
     },
-    {
-      "title": "Black Jack",
-      "image": Groupomania,
-      "description": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
-      "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
-      "link": "https://github.com/AlphaRomeoTango16/Groupomania"
-  },
   ]
 
   const [current, setCurrent] = useState(0);
