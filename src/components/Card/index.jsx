@@ -165,7 +165,7 @@ function Card({ image, title, description, icons, link }) {
             <CardWrapper>
                 <CardVisual src={image}/>
                 <CardContainer isOpen={cardContainer === true}>
-                    <CardTitle>{title}<ChevronIcon onClick={showCardContainer}  icon={cardContainer === true ? ['fas', 'chevron-down'] : ['fas', 'chevron-up']}/></CardTitle>
+                    <CardTitle onClick={showCardContainer}>{title}<ChevronIcon  icon={cardContainer === true ? ['fas', 'chevron-down'] : ['fas', 'chevron-up']}/></CardTitle>
                     <CardDescription>{description}</CardDescription>
                     <CardIcon>{icons.map((icon, index) => 
                         <Icon key={index} src={icon} alt="icon"/>
