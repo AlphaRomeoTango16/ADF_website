@@ -11,6 +11,8 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import MobileCarousel from '../../components/Carousel/Mobile'
+// import DesktopCarousel from '../../components/Carousel/Mobile'
 
 const ProjectsWrapper = styled.div`
   display: flex;

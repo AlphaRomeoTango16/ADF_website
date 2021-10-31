@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Home from './pages/Home'
+// import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -37,6 +37,11 @@ dom.watch();
 const Loader = () => (
   <LoaderSpinner />
 );
+
+const Home = React.lazy(async () => {
+  await new Promise(resolve => setTimeout(resolve, 1200));
+  return import('./pages/Home');
+});
 
 ReactDOM.render(
   <React.StrictMode>
