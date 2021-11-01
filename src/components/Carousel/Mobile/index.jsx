@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 import ReactSwipe from 'react-swipe';
 import Card from '../../Card'
+import colors from '../../../utils/style/colors'
 import projectList from '../projectList';
 
 const MobileCarouselContainer = styled.div`
+  display: inline-block;
+  background-color: ${colors.primary};
+  height: 50vh;
 `
 
 function MobileCarousel() {
