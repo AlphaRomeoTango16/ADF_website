@@ -5,7 +5,7 @@ import { useContext } from 'react'
 
 const LoaderContainer = styled.div`
     display: flex;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     justify-content: center;
