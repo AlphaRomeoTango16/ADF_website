@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { ThemeContext } from '../../utils/context'
 import { useContext } from 'react'
 
@@ -17,6 +17,16 @@ const LogoContainer = styled.div`
         justify-content: center;
 `
 
+
+const moving = keyframes`
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: 300px;
+    }
+`
+
 const LogoLetter = styled.p`
     font-family: 'Raleway', Helvetica, sans serif;
     font-size: 90px;
@@ -25,13 +35,16 @@ const LogoLetter = styled.p`
     margin: 0;
     cursor: pointer;
     transition: all 2s;
+    background-position: 0;
+    background-size: 300px 300px;
     :hover {
         text-shadow: -2px 1px 9px rgba(150, 150, 150, 0.88);
         color: transparent;
         letter-spacing: 5px;
-        background: repeating-linear-gradient(45deg, black, black 30px, white 30px, white 60px);
+        background: repeating-linear-gradient(60deg, black, black 30px, white 30px, white 60px);
         background-clip: text;
         -webkit-background-clip: text;
+        animation: ${moving} 20s linear infinite;
     }
     @media screen and (max-width: 1200px) {
         :active {

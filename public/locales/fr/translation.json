@@ -1,7 +1,7 @@
 {
-    "Welcome1" : "Hello !",
-    "Welcome2" : "Je m'appelle,",
-    "Welcome3" : "développeur fullstack.",
+    "Welcome1": "Hello !",
+    "Welcome2": "Je m'appelle,",
+    "Welcome3": "développeur fullstack.",
     "Home": "Accueil",
     "Projects": "Projets",
     "About": "À propos",
@@ -15,6 +15,15 @@
     "YourEmail": "Votre e-mail",
     "YourMessage": "Votre message",
     "Send": "Envoyer",
-    "Groupomania": "Groupomania est un réseaux social dédié aux employées de l'entreprise Groupomania.",
-    "Repository": "Accès au repository GitHub"
+    "Repository": "Accès au repository GitHub",
+    "ProjectDescription": [
+        {
+            "id": 1,
+            "Project": "Groupomania est un réseaux social dédié aux employées de l'entreprise Groupomania."
+        },
+        {
+            "id": 2,
+            "Project": "Black Jack"
+        }
+    ]
 }

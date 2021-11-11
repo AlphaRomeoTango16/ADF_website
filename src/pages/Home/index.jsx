@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import colors from '../../utils/style/colors'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
@@ -57,36 +57,18 @@ const Tools = styled.div`
     }
 `
 
-const moving = keyframes`
-    0% {
-        background-position: 0px;
-    }
-    50% {
-        background-position: 60px;
-    }
-    100% {
-        background-position: 0px;
-    }
-`
-
 const MeLink = styled.div`
     font-family: 'Raleway', Helvetica, sans-serif;
     font-size: 50px;
-    color: white;
     line-height: 70px;
     font-weight: bold;
     padding-left: 15px;
     cursor: pointer;
     text-decoration: none;
-    background-size: 400%;
-    background-position: 25% 50%;
-    background: repeating-linear-gradient(45deg, ${colors.primary}, ${colors.primary} 30px, white 30px, white 60px);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    animation: ${moving} 10s ease-out infinite;
+    color: white;
     :hover{
         -webkit-text-stroke: 1px white;
+        color: transparent;
     }
     @media screen and (max-width: 1200px) {
         font-size: 20px;
@@ -100,32 +82,9 @@ const Link = styled.a`
     text-decoration: none;
 `
 
-const hello = keyframes`
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(30deg);
-    }
-    50% {
-        transform: rotate(-10deg);
-    }
-    75% {
-        transform: rotate(30deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
-`
-
 const HandIcon = styled.div`
     width: 50px;
     margin: 0;
-    cursor: pointer;
-    :hover{
-        animation: ${hello} 1s infinite;
-        }
-    }
 `
 
 function Home() {
