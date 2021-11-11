@@ -33,6 +33,25 @@ const LogoLetter = styled.p`
         background-clip: text;
         -webkit-background-clip: text;
     }
+    @media screen and (max-width: 1200px) {
+        :active {
+            text-shadow: -2px 1px 9px rgba(150, 150, 150, 0.88);
+            color: transparent;
+            letter-spacing: 5px;
+            background: repeating-linear-gradient(45deg, black, black 30px, white 30px, white 60px);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+      }
+    @media screen and (max-width: 768px) {
+        :active {
+            text-shadow: -2px 1px 9px rgba(150, 150, 150, 0.88);
+            color: transparent;
+            letter-spacing: 5px;
+            background: repeating-linear-gradient(45deg, black, black 30px, white 30px, white 60px);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
 `
 
 function Logo() {

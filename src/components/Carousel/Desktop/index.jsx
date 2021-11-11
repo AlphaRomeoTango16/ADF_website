@@ -2,13 +2,16 @@ import styled from 'styled-components'
 import Card from '../../Card'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import colors from '../../../utils/style/colors'
 import projectList from '../projectList';
 
 const DesktopCarouselContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: ${colors.primary};
+  height: 60vh;
+  align-items: center;
 `
 
 const SliderLeft = styled(FontAwesomeIcon)`

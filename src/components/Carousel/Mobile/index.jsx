@@ -5,8 +5,9 @@ import colors from '../../../utils/style/colors'
 import projectList from '../projectList';
 
 const MobileCarouselContainer = styled.div`
-  display: inline-block;
   background-color: ${colors.primary};
+  display: flex;
+  align-items: center;
   height: 50vh;
 `
 
