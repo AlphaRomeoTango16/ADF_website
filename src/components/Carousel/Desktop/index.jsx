@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import colors from '../../../utils/style/colors'
 import projectList from '../projectList';
+import { useTranslation } from 'react-i18next'
 
 const DesktopCarouselContainer = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ const SliderRight = styled(FontAwesomeIcon)`
 `
 
 function DesktopCarousel() {
-
+    const { t } = useTranslation();
     const [current, setCurrent] = useState(0);
     const length = projectList.length;
   
@@ -56,7 +57,7 @@ function DesktopCarousel() {
                   <Card
                   key={`${project.title}-${index}`}
                   title={project.title}
-                  description={project.description}
+                  description={t(project.description)}
                   image={project.image}
                   icons={project.iconsList}
                   link={project.link}

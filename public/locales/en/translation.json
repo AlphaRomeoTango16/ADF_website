@@ -16,14 +16,6 @@
     "YourMessage": "Your message",
     "Send": "Send",
     "Repository": "Access to the GitHub Repository",
-    "ProjectDescription": [
-        {
-            "id": 1,
-            "Project": "Groupomania is a social media application dedicated to the employees of the company Groupomania."
-        },
-        {
-            "id": 2,
-            "Project": "Black Jack"
-        }
-    ]
+    "Groupomania": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
+    "BlackJack": "Black Jack"
 }

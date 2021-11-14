@@ -9,14 +9,14 @@ const projectList = [
     {
         "title": "Groupomania",
         "image": Groupomania,
-        "description": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
+        "description": "Groupomania",
         "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
         "link": "https://github.com/AlphaRomeoTango16/Groupomania"
     },
     {
         "title": "Black Jack",
         "image": Groupomania,
-        "description": "Groupomania is a social media application dedicated to the employees of the company Groupomania.",
+        "description": "BlackJack",
         "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
         "link": "https://github.com/AlphaRomeoTango16/Groupomania"
     },
