@@ -57,36 +57,6 @@ const Tools = styled.div`
     }
 `
 
-const MeLink = styled.div`
-    font-family: 'Raleway', Helvetica, sans-serif;
-    font-size: 50px;
-    line-height: 70px;
-    font-weight: bold;
-    padding-left: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    color: white;
-    :hover{
-        -webkit-text-stroke: 1px white;
-        color: transparent;
-    }
-    @media screen and (max-width: 1200px) {
-        font-size: 20px;
-      }
-    @media screen and (max-width: 768px) {
-        font-size: 20px;
-    }
-`
-
-const Link = styled.a`
-    text-decoration: none;
-`
-
-const HandIcon = styled.div`
-    width: 50px;
-    margin: 0;
-`
-
 function Home() {
     const { t } = useTranslation();
 
@@ -97,10 +67,9 @@ function Home() {
             </Helmet>
             <HomeWrapper>
                 <HomeContainer>
-                        <HomeTitle>{t("Welcome1")}<HandIcon>👋</HandIcon></HomeTitle>
+                        <HomeTitle>{t("Welcome1")}</HomeTitle>
                         <LineTitle>
                             <HomeTitle>{t("Welcome2")}</HomeTitle>
-                            <Link href="/about"><MeLink>Arthur</MeLink></Link>
                         </LineTitle>
                         <HomeTitle>{t("Welcome3")}</HomeTitle>
                         <Tools>ReactJs &nbsp;/&nbsp; VueJs &nbsp;/&nbsp; Sass &nbsp;/&nbsp; NodeJs &nbsp;/&nbsp; Express</Tools>

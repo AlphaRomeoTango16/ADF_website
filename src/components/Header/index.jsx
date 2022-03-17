@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import colors from '../../utils/style/colors'
 import { useContext, useState, useEffect, useRef } from 'react'
 import { ThemeContext } from '../../utils/context'
 import { StyledLink } from '../../utils/style/Atoms'
@@ -31,7 +32,7 @@ const NavLine = styled.nav`
     @media screen and (max-width: 1200px) {
         flex-direction: column;
         background-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+        isDarkMode ? 'white' : colors.primary};
         justify-content: flex-start;
         width: 50%;
         height: 100%;
@@ -45,7 +46,7 @@ const NavLine = styled.nav`
     @media screen and (max-width: 768px) {
         flex-direction: column;
         background-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+        isDarkMode ? 'white' : colors.primary};
         justify-content: flex-start;
         width: 50%;
         height: 100%;
@@ -67,7 +68,7 @@ const MobileToggleButton = styled.div`
         border-radius: 100%;
         border: 1px solid;
         border-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+        isDarkMode ? 'white' : colors.primary};
         background-color: transparent;
         cursor: pointer;
         right: 20px;
@@ -77,7 +78,7 @@ const MobileToggleButton = styled.div`
         div {
             position: relative;
             background-color: ${({ isDarkMode }) =>
-            isDarkMode ? 'white' : 'black'};
+            isDarkMode ? 'white' : colors.primary};
             border-radius: 20px;
             height: 5px;
             transition: all 0.3s linear;
@@ -109,7 +110,7 @@ const MobileToggleButton = styled.div`
 const NavIcon = styled(FontAwesomeIcon)`
   display: none;
   color: ${({ isDarkMode }) =>
-  isDarkMode ? 'black' : 'white'};
+  isDarkMode ? colors.primary : 'white'};
   padding-right: 15px;
   @media screen and (max-width: 1200px) {
     display: inline-block;

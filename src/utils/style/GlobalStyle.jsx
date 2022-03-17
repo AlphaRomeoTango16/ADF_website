@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { ThemeContext } from '../context'
 import StyledLink from '../style/Atoms'
+import colors from '../style/colors'
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
@@ -12,10 +13,10 @@ const StyledGlobalStyle = createGlobalStyle`
         flex-direction: column;
         height: 100vh;
         background-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'black' : 'white'};
+        isDarkMode ? colors.primary : 'white'};
         margin: 0;
         color : ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+        isDarkMode ? 'white' : colors.primary};
         transition: color 0.50s linear;
         transition: background-color 0.50s linear;
     }
