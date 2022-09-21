@@ -66,7 +66,7 @@ const Tools = styled.div`
     margin-top: 20px;
     font-family: 'Raleway', Helvetica, sans-serif;
     font-size: 20px;
-    color: #313438;
+    color: black;
     font-weight: bold;
     @media screen and (max-width: 1200px) {
         font-size: 10px;
