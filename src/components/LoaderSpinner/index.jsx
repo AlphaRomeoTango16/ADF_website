@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { ThemeContext } from '../../utils/context'
 import { useContext } from 'react'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const LoaderContainer = styled.div`
     display: flex;
@@ -14,21 +13,6 @@ const LoaderContainer = styled.div`
     isDarkMode ? 'white' : 'black'};
     z-index: 15;
 `
-
-// const LoaderIcon = styled(FontAwesomeIcon)`
-//     color: black;
-//     position: fixed;
-//     font-size: 500%;
-//     animation: rotate 2s infinite linear;
-//     @keyframes rotate {
-//         0% {
-//             transform: rotate(0deg);
-//         }
-//         100% {
-//             transform: rotate(360deg);
-//         }
-//     }
-// `
 
 const LogoContainer = styled.div`
     width: 200px;
@@ -52,8 +36,6 @@ const LogoLetter = styled.p`
     font-weight: 600;
     letter-spacing: -20px;
     animation: ${moving} 1s ease-out 1 forwards;
-    -webkit-text-stroke: 1px ${({ isDarkMode }) =>
-    isDarkMode ? 'black' : 'white'};
     color: transparent;
     }
 `

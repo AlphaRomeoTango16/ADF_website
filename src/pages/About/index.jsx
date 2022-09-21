@@ -35,6 +35,8 @@ import ReactHookFormLogo from '../../assets/logo/reacthookform.svg'
 import ReduxLogo from '../../assets/logo/redux.svg'
 import RetoolLogo from '../../assets/logo/retool.svg'
 import TypescriptLogo from '../../assets/logo/typescript.svg'
+import ZapierLogo from '../../assets/logo/zapier.svg'
+import BubbleLogo from '../../assets/logo/bubble.svg'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -369,6 +371,8 @@ function About() {
                                         <a href="https://www.notion.so/" target="_blank" rel="noreferrer"><LogoTool src={NotionLogo} title="Notion"/></a>
                                         <a href="https://www.diagrams.net/" target="_blank" rel="noreferrer"><LogoTool src={DiagramsLogo} title="Diagrams.net"/></a>
                                         <a href="https://www.airtable.com/" target="_blank" rel="noreferrer"><LogoTool src={AirtableLogo} title="Airtable"/></a>
+                                        <a href="https://zapier.com/" target="_blank" rel="noreferrer"><LogoTool src={ZapierLogo} title="Zapier"/></a>
+                                        <a href="https://bubble.io/" target="_blank" rel="noreferrer"><LogoTool src={BubbleLogo} title="Bubble io"/></a>
                                     </StackIcon>
                                 </IconContainer>
                             </StackContainer>
