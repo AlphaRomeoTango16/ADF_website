@@ -1,12 +1,17 @@
 import { useContext } from 'react'
 import { createGlobalStyle } from 'styled-components'
 import { ThemeContext } from '../context'
+// import cursorBlack from '../../assets/cursor_black.png'
+// import cursorWhite from '../../assets/cursor_white.png'
 import StyledLink from '../style/Atoms'
 import colors from '../style/colors'
 
 const StyledGlobalStyle = createGlobalStyle`
     * {
         font-family: 'Heiti SC', Helvetica, sans-serif;
+    }
+    html {
+        cursor: url('../../assets/cursor_black.png'), auto;
     }
     body {
         display: flex;

@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import colors from '../../utils/style/colors'
-import ProfilPicture from '../../assets/ProfilPicture.PNG'
+import ProfilPicture from '../../assets/profil.png'
 import ReactLogo from '../../assets/logo/react.svg'
 import VueLogo from '../../assets/logo/vue.svg'
 import SassLogo from '../../assets/logo/sass.svg'
@@ -81,9 +81,24 @@ justify-content: center;
 }
 `
 
+const gradient = keyframes`
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+`
+
 const PictureContainer = styled.img`
     height: 300px;
     border-radius: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+	animation: ${gradient} 15s ease infinite;
     @media screen and (max-width: 1200px) {
         width: 350px;
         height: 350px;
@@ -279,13 +294,13 @@ const LogoTool = styled.img`
 function About() {
     const { t } = useTranslation();
 
-    const [frontIcon, setFrontIcon] = useState(true);
+    const [frontIcon, setFrontIcon] = useState(false);
     const showFrontIcon = () => setFrontIcon(!frontIcon)
 
-    const [backIcon, setBackIcon] = useState(true);
+    const [backIcon, setBackIcon] = useState(false);
     const showBackIcon = () => setBackIcon(!backIcon)
 
-    const [toolsIcon, setToolsIcon] = useState(true);
+    const [toolsIcon, setToolsIcon] = useState(false);
     const showToolsIcon = () => setToolsIcon(!toolsIcon)
 
 
@@ -328,14 +343,14 @@ function About() {
                                 <StackTitle onClick={showBackIcon} isOpen={backIcon === true}>Backend<ChevronIcon isOpen={backIcon === true} icon={['fas', 'chevron-up']}/></StackTitle>
                                 <IconContainer>
                                     <StackIcon isOpen={backIcon === true}>
-                                        <a href="https://nodejs.org/en/"><LogoTool src={NodeLogo} title="NodeJs"/></a>
-                                        <a href="https://firebase.google.com/"><LogoTool src={FirebaseLogo} title="Firebase"/></a>
-                                        <a href="https://expressjs.com/fr/"><LogoTool src={ExpressJsLogo} title="ExpressJs"/></a>
-                                        <a href="https://axios-http.com/"><LogoTool src={AxiosLogo} title="Axios"/></a>
-                                        <a href="https://www.npmjs.com/package/nodemon"><LogoTool src={NodemonLogo} title="Nodemon"/></a>
-                                        <a href="https://sequelize.org/"><LogoTool src={SequelizeLogo} title="Sequelize"/></a>
-                                        <a href="https://www.mongodb.com/fr-fr"><LogoTool src={MongoDBLogo} title="MongoDB"/></a>
-                                        <a href="https://www.mysql.com/fr/"><LogoTool src={MySQLLogo} title="MySQL"/></a>
+                                        <a href="https://nodejs.org/en/" target="_blank" rel="noreferrer"><LogoTool src={NodeLogo} title="NodeJs"/></a>
+                                        <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"><LogoTool src={FirebaseLogo} title="Firebase"/></a>
+                                        <a href="https://expressjs.com/fr/" target="_blank" rel="noreferrer"><LogoTool src={ExpressJsLogo} title="ExpressJs"/></a>
+                                        <a href="https://axios-http.com/" target="_blank" rel="noreferrer"><LogoTool src={AxiosLogo} title="Axios"/></a>
+                                        <a href="https://www.npmjs.com/package/nodemon" target="_blank" rel="noreferrer"><LogoTool src={NodemonLogo} title="Nodemon"/></a>
+                                        <a href="https://sequelize.org/" target="_blank" rel="noreferrer"><LogoTool src={SequelizeLogo} title="Sequelize"/></a>
+                                        <a href="https://www.mongodb.com/fr-fr" target="_blank" rel="noreferrer"><LogoTool src={MongoDBLogo} title="MongoDB"/></a>
+                                        <a href="https://www.mysql.com/fr/" target="_blank" rel="noreferrer"><LogoTool src={MySQLLogo} title="MySQL"/></a>
                                     </StackIcon>
                                 </IconContainer>
                                 </StackContainer>
@@ -343,17 +358,17 @@ function About() {
                                 <StackTitle onClick={showToolsIcon} isOpen={toolsIcon === true}>{t("Tools")}<ChevronIcon isOpen={toolsIcon === true} icon={['fas', 'chevron-up']}/></StackTitle>
                                 <IconContainer>
                                     <StackIcon isOpen={toolsIcon === true}>
-                                        <a href="https://code.visualstudio.com/"><LogoTool src={VSLogo} title="Visual Studio Code"/></a>
-                                        <a href="https://git-scm.com/"><LogoTool src={GitLogo} title="Git"/></a>
-                                        <a href="https://github.com/"><LogoTool src={GitHubLogo} title="GitHub"/></a>
-                                        <a href="hhttps://about.gitlab.com/"><LogoTool src={GitLabLogo} title="GitLab"/></a>
-                                        <a href="https://www.figma.com/"><LogoTool src={FigmaLogo} title="Figma"/></a>
-                                        <a href="https://www.postman.com/"><LogoTool src={PostmanLogo} title="Postman"/></a>
-                                        <a href="https://www.netlify.com/"><LogoTool src={NetlifyLogo} title="Netlify"/></a>
-                                        <a href="https://retool.com/"><LogoTool src={RetoolLogo} title="Retool"/></a>
-                                        <a href="https://www.notion.so/"><LogoTool src={NotionLogo} title="Notion"/></a>
-                                        <a href="https://www.diagrams.net/"><LogoTool src={DiagramsLogo} title="Diagrams.net"/></a>
-                                        <a href="https://www.airtable.com/"><LogoTool src={AirtableLogo} title="Airtable"/></a>
+                                        <a href="https://code.visualstudio.com/" target="_blank" rel="noreferrer"><LogoTool src={VSLogo} title="Visual Studio Code"/></a>
+                                        <a href="https://git-scm.com/" target="_blank" rel="noreferrer"><LogoTool src={GitLogo} title="Git"/></a>
+                                        <a href="https://github.com/" target="_blank" rel="noreferrer"><LogoTool src={GitHubLogo} title="GitHub"/></a>
+                                        <a href="https://about.gitlab.com/" target="_blank" rel="noreferrer"><LogoTool src={GitLabLogo} title="GitLab"/></a>
+                                        <a href="https://www.figma.com/" target="_blank" rel="noreferrer"><LogoTool src={FigmaLogo} title="Figma"/></a>
+                                        <a href="https://www.postman.com/" target="_blank" rel="noreferrer"><LogoTool src={PostmanLogo} title="Postman"/></a>
+                                        <a href="https://www.netlify.com/" target="_blank" rel="noreferrer"><LogoTool src={NetlifyLogo} title="Netlify"/></a>
+                                        <a href="https://retool.com/" target="_blank" rel="noreferrer"><LogoTool src={RetoolLogo} title="Retool"/></a>
+                                        <a href="https://www.notion.so/" target="_blank" rel="noreferrer"><LogoTool src={NotionLogo} title="Notion"/></a>
+                                        <a href="https://www.diagrams.net/" target="_blank" rel="noreferrer"><LogoTool src={DiagramsLogo} title="Diagrams.net"/></a>
+                                        <a href="https://www.airtable.com/" target="_blank" rel="noreferrer"><LogoTool src={AirtableLogo} title="Airtable"/></a>
                                     </StackIcon>
                                 </IconContainer>
                             </StackContainer>
