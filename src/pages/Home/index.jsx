@@ -37,6 +37,12 @@ const HomeContainer = styled.div`
     margin: 70px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 1200px) {
+        margin: 30px;
+      }
+    @media screen and (max-width: 768px) {
+        margin: 30px;
+    }
 `
 
 const HomeTitle = styled.div`
@@ -50,10 +56,12 @@ const HomeTitle = styled.div`
     color: ${({ isDarkMode }) =>
     isDarkMode ? 'white' : 'black'};
     @media screen and (max-width: 1200px) {
-        font-size: 20px;
+        font-size: 25px;
+        line-height: 30px;
       }
     @media screen and (max-width: 768px) {
-        font-size: 20px;
+        font-size: 25px;
+        line-height: 30px;
     }
 `
 
